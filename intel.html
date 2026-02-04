@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MA Market Pulse — Operator Signals Pack | Commercial Intelligence for Cannabis Vendors</title>
-    <meta name="description" content="Stop chasing zombie dispensaries. The Priority 150 shows you who's actually buying, who's growing, and who needs YOUR product category. Limited to 3 buyers per quarter.">
+    <title>Stop Wasting Time on Dead Leads — Randy Finds Your Buyers | MA Market Intel Service</title>
+    <meta name="description" content="Tell Randy what you sell. He'll analyze 600+ MA cannabis operators and deliver a qualified buyer list to your inbox. Done-for-you lead intelligence. No software, no hassle.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +55,7 @@
         }
         
         .container {
-            max-width: 1280px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 32px;
         }
@@ -167,7 +167,7 @@
         }
         
         .hero h1 {
-            font-size: clamp(48px, 8vw, 96px);
+            font-size: clamp(42px, 7vw, 80px);
             max-width: 900px;
             margin-bottom: 32px;
         }
@@ -178,43 +178,69 @@
         }
         
         .hero-sub {
-            font-size: 20px;
+            font-size: 21px;
             color: var(--support-silver);
-            max-width: 560px;
+            max-width: 620px;
             margin-bottom: 48px;
             line-height: 1.7;
         }
         
-        /* Stats Row */
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--border-subtle);
-            border: 1px solid var(--border-subtle);
-            margin-top: 80px;
+        .hero-sub strong {
+            color: var(--text-warm);
         }
         
-        .stat-item {
-            background: var(--bg-deep);
-            padding: 40px;
-            text-align: center;
+        .hero-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
         }
         
-        .stat-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 48px;
+        .primary-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-lime);
+            color: var(--bg-deep);
+            font-size: 16px;
             font-weight: 600;
-            color: var(--accent-lime);
-            line-height: 1;
-            margin-bottom: 12px;
+            padding: 18px 36px;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.2s ease;
         }
         
-        .stat-label {
+        .primary-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(204, 255, 0, 0.25);
+        }
+        
+        .secondary-note {
             font-size: 14px;
             color: var(--support-silver);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        }
+        
+        /* Promise Strip */
+        .promise-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 64px;
+            padding-top: 48px;
+            border-top: 1px solid var(--border-subtle);
+        }
+        
+        .promise-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--support-silver);
+        }
+        
+        .promise-icon {
+            color: var(--accent-lime);
+            font-size: 18px;
         }
         
         /* Section Spacing */
@@ -224,17 +250,6 @@
         
         .section-gap {
             padding: 120px 0;
-        }
-        
-        /* Problem Section */
-        .problem {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        
-        .problem-header {
-            margin-bottom: 64px;
         }
         
         .section-label {
@@ -247,24 +262,47 @@
         }
         
         .section-title {
-            font-size: clamp(32px, 5vw, 56px);
+            font-size: clamp(32px, 5vw, 52px);
             max-width: 700px;
         }
         
-        .problem-grid {
+        /* Empathy Section */
+        .empathy {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        
+        .empathy-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+        
+        .empathy-header h2 {
+            margin-bottom: 20px;
+        }
+        
+        .empathy-header p {
+            font-size: 19px;
+            color: var(--support-silver);
+            line-height: 1.7;
+        }
+        
+        .pain-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
         
-        .problem-card {
+        .pain-card {
             background: var(--bg-deep);
             border: 1px solid var(--border-subtle);
-            padding: 48px;
+            padding: 40px;
             position: relative;
         }
         
-        .problem-card::before {
+        .pain-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -272,138 +310,75 @@
             width: 100%;
             height: 3px;
             background: linear-gradient(90deg, #ff4444, transparent);
-            opacity: 0.6;
+            opacity: 0.5;
         }
         
-        .problem-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 64px;
-            font-weight: 600;
-            color: rgba(236, 235, 230, 0.06);
-            position: absolute;
-            top: 24px;
-            right: 32px;
-            line-height: 1;
+        .pain-emoji {
+            font-size: 32px;
+            margin-bottom: 20px;
         }
         
-        .problem-card h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-        
-        .problem-card p {
-            color: var(--support-silver);
-            line-height: 1.7;
-        }
-        
-        /* Intelligence Section - Bento Grid */
-        .bento-section {
-            padding: 120px 0;
-        }
-        
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: auto;
-            gap: 16px;
-            margin-top: 64px;
-        }
-        
-        .bento-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .bento-card.featured {
-            border-color: var(--border-accent);
-        }
-        
-        .bento-card.featured::after {
-            content: 'KILLER FEATURE';
-            position: absolute;
-            top: 20px;
-            right: -35px;
-            background: var(--accent-lime);
-            color: var(--bg-deep);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 10px;
-            font-weight: 700;
-            padding: 6px 40px;
-            transform: rotate(45deg);
-            letter-spacing: 0.05em;
-        }
-        
-        .bento-1 { grid-column: span 7; grid-row: span 2; }
-        .bento-2 { grid-column: span 5; }
-        .bento-3 { grid-column: span 5; }
-        .bento-4 { grid-column: span 4; }
-        .bento-5 { grid-column: span 4; }
-        .bento-6 { grid-column: span 4; }
-        .bento-7 { grid-column: span 6; }
-        .bento-8 { grid-column: span 6; }
-        
-        .bento-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(204, 255, 0, 0.1);
-            border: 1px solid var(--border-accent);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            font-size: 24px;
-        }
-        
-        .bento-card h3 {
+        .pain-card h3 {
             font-size: 22px;
             margin-bottom: 12px;
         }
         
-        .bento-card p {
+        .pain-card p {
             color: var(--support-silver);
-            font-size: 15px;
             line-height: 1.7;
+            font-size: 15px;
         }
         
-        .bento-card.featured h3 {
-            color: var(--accent-lime);
-        }
-        
-        .example-query {
-            background: var(--bg-deep);
-            border: 1px solid var(--border-subtle);
-            padding: 16px 20px;
-            margin-top: 24px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 13px;
-            color: var(--accent-lime);
-            border-radius: 6px;
-        }
-        
-        /* Menu Gap Deep Dive */
-        .menu-gap-section {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
+        /* The Service Section */
+        .service-section {
             padding: 120px 0;
         }
         
-        .menu-gap-content {
+        .service-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
         }
         
-        .menu-gap-visual {
-            background: var(--bg-deep);
+        .service-text h2 {
+            font-size: 44px;
+            margin-bottom: 24px;
+        }
+        
+        .service-text h2 span {
+            color: var(--accent-lime);
+        }
+        
+        .service-text > p {
+            color: var(--support-silver);
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .randy-note {
+            background: rgba(204, 255, 0, 0.05);
+            border-left: 3px solid var(--accent-lime);
+            padding: 24px 28px;
+            margin-top: 32px;
+        }
+        
+        .randy-note p {
+            margin: 0;
+            font-size: 16px;
+            color: var(--text-warm);
+            line-height: 1.7;
+        }
+        
+        .randy-note strong {
+            color: var(--accent-lime);
+        }
+        
+        .service-visual {
+            background: var(--bg-card);
             border: 1px solid var(--border-accent);
             padding: 48px;
-            position: relative;
         }
         
         .visual-header {
@@ -436,71 +411,200 @@
             letter-spacing: 0.1em;
         }
         
-        .filter-row {
+        .conversation-flow {
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 32px;
+            flex-direction: column;
+            gap: 20px;
         }
         
-        .filter-tag {
+        .convo-bubble {
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .convo-bubble.you {
             background: rgba(204, 255, 0, 0.1);
             border: 1px solid var(--border-accent);
-            padding: 10px 16px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: var(--accent-lime);
-            border-radius: 100px;
+            align-self: flex-end;
+            max-width: 85%;
         }
         
-        .results-preview {
+        .convo-bubble.randy {
+            background: var(--bg-deep);
+            border: 1px solid var(--border-subtle);
+            align-self: flex-start;
+            max-width: 85%;
+        }
+        
+        .convo-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+            opacity: 0.7;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            background: var(--bg-card);
             border-top: 1px solid var(--border-subtle);
-            padding-top: 24px;
-        }
-        
-        .results-count {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
-            color: var(--support-silver);
-            margin-bottom: 20px;
-        }
-        
-        .results-count span {
-            color: var(--accent-lime);
-            font-size: 28px;
-            font-weight: 600;
-        }
-        
-        .result-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
             border-bottom: 1px solid var(--border-subtle);
+            padding: 120px 0;
         }
         
-        .result-item:last-child {
-            border-bottom: none;
+        .how-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 72px;
         }
         
-        .result-name {
-            font-weight: 500;
+        .how-header h2 {
+            margin-bottom: 16px;
         }
         
-        .result-meta {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
+        .how-header p {
             color: var(--support-silver);
+            font-size: 18px;
         }
         
-        .result-gap {
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        
+        .step-card {
+            background: var(--bg-deep);
+            border: 1px solid var(--border-subtle);
+            padding: 48px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 48px;
+            height: 48px;
             background: var(--accent-lime);
             color: var(--bg-deep);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
+            font-family: 'Fraunces', serif;
+            font-size: 22px;
             font-weight: 600;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .step-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            margin-top: 16px;
+        }
+        
+        .step-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+        
+        .step-card p {
+            color: var(--support-silver);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        .step-arrow {
+            display: none;
+        }
+        
+        /* What You Get */
+        .deliverables {
+            padding: 120px 0;
+        }
+        
+        .deliverables-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 64px;
+        }
+        
+        .deliverables-header h2 {
+            margin-bottom: 16px;
+        }
+        
+        .deliverables-header p {
+            color: var(--support-silver);
+            font-size: 18px;
+        }
+        
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        
+        .deliverable-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            padding: 36px;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .deliverable-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(204, 255, 0, 0.1);
+            border: 1px solid var(--border-accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        
+        .deliverable-card h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .deliverable-card p {
+            color: var(--support-silver);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        .deliverable-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--accent-lime);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 8px;
+        }
+        
+        /* Menu Gap Section */
+        .menu-gap-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 120px 0;
+        }
+        
+        .menu-gap-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
         
         .menu-gap-text h2 {
@@ -516,193 +620,117 @@
             color: var(--support-silver);
             font-size: 18px;
             line-height: 1.8;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
         
-        .highlight-box {
-            background: rgba(204, 255, 0, 0.05);
-            border-left: 3px solid var(--accent-lime);
-            padding: 24px 28px;
-            margin-top: 32px;
+        .menu-gap-example {
+            background: var(--bg-deep);
+            border: 1px solid var(--border-accent);
+            padding: 40px;
         }
         
-        .highlight-box p {
-            margin: 0;
-            font-size: 16px;
-            color: var(--text-warm);
-        }
-        
-        /* Who This Is For */
-        .audience-section {
-            padding: 120px 0;
-        }
-        
-        .audience-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            margin-top: 64px;
-        }
-        
-        .audience-box {
-            padding: 48px;
-            border: 1px solid var(--border-subtle);
-        }
-        
-        .audience-box.for {
-            background: rgba(204, 255, 0, 0.03);
-            border-color: var(--border-accent);
-        }
-        
-        .audience-box.not-for {
-            background: rgba(255, 68, 68, 0.03);
-            border-color: rgba(255, 68, 68, 0.2);
-        }
-        
-        .audience-header {
+        .example-header {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             padding-bottom: 20px;
             border-bottom: 1px solid var(--border-subtle);
         }
         
-        .audience-header h3 {
-            font-size: 20px;
-        }
-        
-        .audience-icon {
-            font-size: 24px;
-        }
-        
-        .audience-list {
-            list-style: none;
-        }
-        
-        .audience-list li {
-            padding: 12px 0;
-            padding-left: 28px;
-            position: relative;
+        .example-header span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
             color: var(--support-silver);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
         
-        .audience-box.for .audience-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent-lime);
-            font-weight: 600;
-        }
-        
-        .audience-box.not-for .audience-list li::before {
-            content: '✕';
-            position: absolute;
-            left: 0;
-            color: #ff6b6b;
-            font-weight: 600;
-        }
-        
-        /* Methodology */
-        .methodology-section {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 120px 0;
-        }
-        
-        .methodology-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 80px;
-        }
-        
-        .methodology-sources {
-            display: grid;
-            gap: 20px;
-        }
-        
-        .source-card {
-            background: var(--bg-deep);
-            border: 1px solid var(--border-subtle);
-            padding: 28px;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-        }
-        
-        .source-icon {
-            width: 44px;
-            height: 44px;
-            background: rgba(204, 255, 0, 0.08);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 20px;
-        }
-        
-        .source-card h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-        
-        .source-card p {
-            font-size: 14px;
-            color: var(--support-silver);
-        }
-        
-        /* ROI Section */
-        .roi-section {
-            padding: 120px 0;
-            text-align: center;
-        }
-        
-        .roi-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .roi-headline {
-            font-size: 56px;
+        .example-scenario {
             margin-bottom: 24px;
         }
         
-        .roi-headline span {
-            background: linear-gradient(135deg, var(--accent-lime) 0%, #a8d900 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .example-scenario h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent-lime);
         }
         
-        .roi-math {
+        .example-scenario p {
+            color: var(--support-silver);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .example-result {
+            background: rgba(204, 255, 0, 0.08);
+            border: 1px solid var(--border-accent);
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .result-text {
+            font-size: 15px;
+        }
+        
+        .result-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--accent-lime);
+        }
+        
+        /* Who This Helps */
+        .audience-section {
+            padding: 120px 0;
+        }
+        
+        .audience-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 64px;
+        }
+        
+        .audience-header h2 {
+            margin-bottom: 16px;
+        }
+        
+        .audience-header p {
+            color: var(--support-silver);
+            font-size: 18px;
+        }
+        
+        .audience-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 48px;
-            margin: 64px 0;
-            padding: 48px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
+            gap: 24px;
         }
         
-        .roi-item {
+        .audience-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            padding: 40px;
             text-align: center;
         }
         
-        .roi-value {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 36px;
-            font-weight: 600;
-            color: var(--accent-lime);
-            margin-bottom: 8px;
+        .audience-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
         }
         
-        .roi-label {
-            font-size: 14px;
+        .audience-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+        
+        .audience-card p {
             color: var(--support-silver);
+            font-size: 15px;
+            line-height: 1.7;
         }
         
         /* Pricing Section */
@@ -712,93 +740,103 @@
             padding: 120px 0;
         }
         
+        .pricing-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
         .pricing-header {
             text-align: center;
-            max-width: 600px;
-            margin: 0 auto 64px;
+            margin-bottom: 48px;
         }
         
         .pricing-header h2 {
-            font-size: 48px;
+            font-size: 44px;
             margin-bottom: 16px;
         }
         
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 900px;
-            margin: 0 auto;
+        .pricing-header p {
+            color: var(--support-silver);
+            font-size: 18px;
         }
         
         .pricing-card {
             background: var(--bg-deep);
-            border: 1px solid var(--border-subtle);
-            padding: 48px;
+            border: 2px solid var(--accent-lime);
+            padding: 56px;
+            text-align: center;
             position: relative;
         }
         
-        .pricing-card.featured {
-            border-color: var(--accent-lime);
-        }
-        
-        .pricing-card.featured::before {
-            content: 'BEST VALUE';
+        .pricing-badge {
             position: absolute;
-            top: -12px;
-            left: 48px;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
             background: var(--accent-lime);
             color: var(--bg-deep);
             font-family: 'JetBrains Mono', monospace;
             font-size: 11px;
             font-weight: 700;
-            padding: 6px 16px;
+            padding: 8px 20px;
             letter-spacing: 0.05em;
         }
         
-        .pricing-type {
+        .pricing-label {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
+            font-size: 13px;
             color: var(--support-silver);
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
         
         .pricing-amount {
             font-family: 'Fraunces', serif;
-            font-size: 56px;
+            font-size: 72px;
             font-weight: 500;
             margin-bottom: 8px;
-        }
-        
-        .pricing-amount span {
-            font-size: 20px;
-            color: var(--support-silver);
+            color: var(--accent-lime);
         }
         
         .pricing-desc {
             color: var(--support-silver);
-            font-size: 15px;
-            margin-bottom: 32px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid var(--border-subtle);
+            font-size: 17px;
+            margin-bottom: 36px;
         }
         
-        .pricing-features {
+        .pricing-includes {
+            text-align: left;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 32px;
+            margin-bottom: 36px;
+        }
+        
+        .pricing-includes h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--support-silver);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .includes-list {
             list-style: none;
-            margin-bottom: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
         }
         
-        .pricing-features li {
-            padding: 10px 0;
+        .includes-list li {
+            font-size: 15px;
+            color: var(--text-warm);
             padding-left: 24px;
             position: relative;
-            font-size: 15px;
-            color: var(--support-silver);
         }
         
-        .pricing-features li::before {
+        .includes-list li::before {
             content: '✓';
             position: absolute;
             left: 0;
@@ -808,39 +846,31 @@
         
         .pricing-cta {
             display: block;
-            text-align: center;
-            padding: 18px 32px;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 100px;
-            transition: all 0.2s ease;
-        }
-        
-        .pricing-cta.primary {
             background: var(--accent-lime);
             color: var(--bg-deep);
+            font-size: 17px;
+            font-weight: 600;
+            padding: 20px 40px;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-bottom: 20px;
         }
         
-        .pricing-cta.primary:hover {
+        .pricing-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(204, 255, 0, 0.25);
+            box-shadow: 0 12px 40px rgba(204, 255, 0, 0.3);
         }
         
-        .pricing-cta.secondary {
-            background: transparent;
-            color: var(--text-warm);
-            border: 1px solid var(--border-subtle);
-        }
-        
-        .pricing-cta.secondary:hover {
-            border-color: var(--accent-lime);
+        .pricing-subtext {
+            font-size: 14px;
+            color: var(--support-silver);
         }
         
         .scarcity-notice {
             text-align: center;
-            margin-top: 48px;
-            padding: 24px;
+            margin-top: 40px;
+            padding: 20px;
             border: 1px solid rgba(255, 68, 68, 0.3);
             background: rgba(255, 68, 68, 0.05);
         }
@@ -851,51 +881,8 @@
             color: #ff6b6b;
         }
         
-        /* FAQ Section */
-        .faq-section {
-            padding: 120px 0;
-        }
-        
-        .faq-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-        
-        .faq-header h2 {
-            font-size: 42px;
-        }
-        
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .faq-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            padding: 36px;
-        }
-        
-        .faq-item h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        
-        .faq-item p {
-            color: var(--support-silver);
-            font-size: 15px;
-            line-height: 1.7;
-        }
-        
         /* Final CTA */
         .final-cta {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border-subtle);
             padding: 120px 0;
             text-align: center;
         }
@@ -906,7 +893,7 @@
         }
         
         .cta-content h2 {
-            font-size: 52px;
+            font-size: 48px;
             margin-bottom: 24px;
         }
         
@@ -916,15 +903,24 @@
         }
         
         .cta-content > p {
-            font-size: 18px;
+            font-size: 19px;
             color: var(--support-silver);
             margin-bottom: 48px;
+            line-height: 1.7;
         }
         
-        .cta-button {
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+        
+        .cta-primary {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             background: var(--accent-lime);
             color: var(--bg-deep);
             font-size: 17px;
@@ -935,20 +931,38 @@
             transition: all 0.2s ease;
         }
         
-        .cta-button:hover {
+        .cta-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 12px 40px rgba(204, 255, 0, 0.3);
         }
         
-        .cta-button svg {
-            width: 20px;
-            height: 20px;
+        .cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--text-warm);
+            font-size: 17px;
+            font-weight: 600;
+            padding: 20px 40px;
+            border-radius: 100px;
+            text-decoration: none;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.2s ease;
+        }
+        
+        .cta-secondary:hover {
+            border-color: var(--accent-lime);
         }
         
         .cta-subtext {
-            margin-top: 24px;
-            font-size: 14px;
+            font-size: 15px;
             color: var(--support-silver);
+        }
+        
+        .cta-subtext a {
+            color: var(--accent-lime);
+            text-decoration: none;
         }
         
         /* Footer */
@@ -986,24 +1000,8 @@
         
         /* Responsive */
         @media (max-width: 1024px) {
-            .bento-grid {
-                grid-template-columns: repeat(6, 1fr);
-            }
-            
-            .bento-1, .bento-2, .bento-3, .bento-7, .bento-8 { 
-                grid-column: span 6; 
-            }
-            
-            .bento-4, .bento-5, .bento-6 { 
-                grid-column: span 3; 
-            }
-            
-            .bento-1 {
-                grid-row: span 1;
-            }
-            
-            .menu-gap-content,
-            .methodology-content {
+            .service-content,
+            .menu-gap-content {
                 grid-template-columns: 1fr;
                 gap: 48px;
             }
@@ -1014,39 +1012,43 @@
                 padding: 0 20px;
             }
             
-            .stats-row,
-            .problem-grid,
-            .audience-grid,
-            .pricing-grid,
-            .faq-grid,
-            .roi-math {
+            .pain-grid,
+            .steps-grid,
+            .deliverables-grid,
+            .audience-cards,
+            .includes-list {
                 grid-template-columns: 1fr;
-            }
-            
-            .bento-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .bento-1, .bento-2, .bento-3, .bento-4, .bento-5, .bento-6, .bento-7, .bento-8 {
-                grid-column: span 1;
             }
             
             .hero h1 {
-                font-size: 40px;
+                font-size: 36px;
             }
             
-            .section-title, .roi-headline, .cta-content h2 {
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .pricing-amount {
+                font-size: 56px;
+            }
+            
+            .cta-content h2 {
                 font-size: 32px;
             }
             
-            .menu-gap-text h2, .pricing-header h2, .faq-header h2 {
-                font-size: 28px;
+            .promise-strip {
+                flex-direction: column;
+                gap: 16px;
             }
             
             footer .container {
                 flex-direction: column;
                 gap: 24px;
                 text-align: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
             }
         }
     </style>
@@ -1056,402 +1058,316 @@
     <nav>
         <div class="container">
             <a href="#" class="logo">
-                <div class="logo-mark">MP</div>
-                <span>Market Pulse</span>
+                <div class="logo-mark">R</div>
+                <span>Roviq</span>
             </a>
-            <a href="mailto:randy@roviqai.xyz" class="nav-cta">Get Intelligence</a>
+            <a href="mailto:randy@roviqai.xyz" class="nav-cta">Talk to Randy</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-eyebrow">MA Market Pulse</div>
-            <h1>Stop Chasing <span>Zombies.</span><br>Start Closing Survivors.</h1>
-            <p class="hero-sub">The Priority 150 ranks Massachusetts cannabis operators by commercial signals—not just license data. Know who's actually buying before they know they're buying.</p>
-            <a href="mailto:randy@roviqai.xyz" class="nav-cta" style="font-size: 16px; padding: 18px 36px;">Request Access →</a>
+            <div class="hero-eyebrow">Done-for-You Lead Intel</div>
+            <h1>Stop Wasting Time on <span>Dead Leads.</span><br>We Find Your Buyers.</h1>
+            <p class="hero-sub">Tell us what you sell. We analyze 600+ Massachusetts cannabis operators. <strong>You get a qualified buyer list delivered to your inbox.</strong> No software. No learning curve. No hassle.</p>
             
-            <div class="stats-row">
-                <div class="stat-item">
-                    <div class="stat-number">40%</div>
-                    <div class="stat-label">Time Wasted on Dead Leads</div>
+            <div class="hero-cta-group">
+                <a href="mailto:randy@roviqai.xyz?subject=Intel%20Service%20Inquiry" class="primary-cta">
+                    Book a Call with Randy →
+                </a>
+                <span class="secondary-note">Response within 24 hours</span>
+            </div>
+            
+            <div class="promise-strip">
+                <div class="promise-item">
+                    <span class="promise-icon">✓</span>
+                    <span>We do all the work</span>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">150</div>
-                    <div class="stat-label">Priority Operators Ranked</div>
+                <div class="promise-item">
+                    <span class="promise-icon">✓</span>
+                    <span>Delivered to your inbox</span>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">30d</div>
-                    <div class="stat-label">Data Refresh Guarantee</div>
+                <div class="promise-item">
+                    <span class="promise-icon">✓</span>
+                    <span>No software to learn</span>
+                </div>
+                <div class="promise-item">
+                    <span class="promise-icon">✓</span>
+                    <span>One call, that's it</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Problem -->
-    <section class="problem section-gap">
+    <!-- Empathy Section -->
+    <section class="empathy section-gap">
         <div class="container">
-            <div class="problem-header">
-                <div class="section-label">The Problem</div>
-                <h2 class="section-title">CCC Data Is a Graveyard of False Hope</h2>
+            <div class="empathy-header">
+                <div class="section-label">We Get It</div>
+                <h2 class="section-title">Selling to Dispensaries Is Exhausting</h2>
+                <p>You've been there. Driving across the state, pitching to stores that closed last quarter. Sending emails into the void. Wondering who actually needs what you sell.</p>
             </div>
             
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-number">01</div>
-                    <h3>License ≠ Operational</h3>
-                    <p>CCC shows 400+ active licenses. Reality? Maybe 200 are actually transacting. You're pitching to stores that closed 8 months ago.</p>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-emoji">😤</div>
+                    <h3>Chasing Zombies</h3>
+                    <p>40% of your outreach goes to stores that are closed, struggling, or just not buying. That's two days a week wasted on dead leads.</p>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-number">02</div>
-                    <h3>Data Lags Weeks</h3>
-                    <p>By the time CCC updates, the buying decision was made. You're showing up with last quarter's intel to a buyer who decided yesterday.</p>
+                <div class="pain-card">
+                    <div class="pain-emoji">🎯</div>
+                    <h3>Flying Blind</h3>
+                    <p>You don't know who actually needs your product category. You're guessing. And guessing means losing to competitors who know.</p>
                 </div>
-                <div class="problem-card">
-                    <div class="problem-number">03</div>
-                    <h3>No Commercial Signals</h3>
-                    <p>License data tells you who CAN buy. It says nothing about who IS buying, who's growing, or who desperately needs your category.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">04</div>
-                    <h3>Generic Contact Info</h3>
-                    <p>info@dispensary.com goes to a spam folder. You need the procurement manager's name, not a black hole.</p>
+                <div class="pain-card">
+                    <div class="pain-emoji">📧</div>
+                    <h3>The Black Hole</h3>
+                    <p>info@dispensary.com goes nowhere. You need the buyer's actual name, their actual email. Not a spam folder.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Intelligence - Bento Grid -->
-    <section class="bento-section">
+    <!-- The Service -->
+    <section class="service-section">
         <div class="container">
-            <div class="section-label">The Intelligence</div>
-            <h2 class="section-title">Seven Signals. One Decision Engine.</h2>
-            
-            <div class="bento-grid">
-                <!-- Featured: Menu Gap Analysis -->
-                <div class="bento-card featured bento-1">
-                    <div class="bento-icon">📊</div>
-                    <h3>Menu Gap Analysis</h3>
-                    <p>The killer feature. Filter operators by what they DON'T carry. A beverage brand searches "stores with &lt;2 beverage SKUs" and gets an instant qualified lead list. Edibles brand? Filter by edible gaps. This alone is worth the price of admission.</p>
-                    <div class="example-query">> filter: beverages &lt; 3 SKUs → 47 qualified leads</div>
+            <div class="service-content">
+                <div class="service-text">
+                    <div class="section-label">The Service</div>
+                    <h2>Randy Does the <span>Work.</span><br>You Get the List.</h2>
+                    <p>This isn't a tool you have to figure out. This isn't a database you wade through. This is a service.</p>
+                    <p>You tell Randy what you sell. He analyzes the entire Massachusetts market—every operator, every menu, every signal. Then he delivers a qualified buyer list, customized to your exact product category.</p>
+                    
+                    <div class="randy-note">
+                        <p><strong>Real talk:</strong> Randy personally reviews the data, builds the filters, and makes sure you're getting leads that actually make sense for YOUR business. This is consultant-level intel, not self-serve SaaS.</p>
+                    </div>
                 </div>
                 
-                <!-- Priority 150 -->
-                <div class="bento-card bento-2">
-                    <div class="bento-icon">🎯</div>
-                    <h3>The Priority 150</h3>
-                    <p>Top operators ranked by commercial viability, not license date. Proprietary scoring based on review velocity, menu breadth, hiring activity, and operational signals.</p>
-                </div>
-                
-                <!-- Live Status -->
-                <div class="bento-card bento-3">
-                    <div class="bento-icon">✓</div>
-                    <h3>Live Status Verification</h3>
-                    <p>Actually open? We verify operational status weekly. CCC data lags. Ours doesn't.</p>
-                </div>
-                
-                <!-- Review Velocity -->
-                <div class="bento-card bento-4">
-                    <div class="bento-icon">📈</div>
-                    <h3>Review Velocity</h3>
-                    <p>Weekly Google review changes = foot traffic proxy. Growing reviews = growing store.</p>
-                </div>
-                
-                <!-- Hiring Signals -->
-                <div class="bento-card bento-5">
-                    <div class="bento-icon">👤</div>
-                    <h3>Hiring Signals</h3>
-                    <p>Job postings = growth. "Inventory Manager" posting = new buyer incoming. Get there first.</p>
-                </div>
-                
-                <!-- Decision Makers -->
-                <div class="bento-card bento-6">
-                    <div class="bento-icon">📧</div>
-                    <h3>Decision Maker Contacts</h3>
-                    <p>Real names, real emails. Not info@ black holes. The actual person who signs POs.</p>
-                </div>
-                
-                <!-- Refresh Guarantee -->
-                <div class="bento-card bento-7">
-                    <div class="bento-icon">🔄</div>
-                    <h3>30-Day Refresh Guarantee</h3>
-                    <p>Markets move fast. Your data should too. Monthly subscribers get weekly priority updates. One-time buyers get a guaranteed 30-day refresh.</p>
-                </div>
-                
-                <!-- Category Filters -->
-                <div class="bento-card bento-8">
-                    <div class="bento-icon">🏷️</div>
-                    <h3>Category-Level Filters</h3>
-                    <p>Beverages. Edibles. Topicals. Flower. Pre-rolls. Filter by what matters to YOUR pitch.</p>
+                <div class="service-visual">
+                    <div class="visual-header">
+                        <div class="visual-dot"></div>
+                        <div class="visual-label">How the Conversation Goes</div>
+                    </div>
+                    
+                    <div class="conversation-flow">
+                        <div class="convo-bubble you">
+                            <div class="convo-label">You</div>
+                            "Hey Randy, we sell cannabis beverages. Need to find dispensaries that would actually stock us."
+                        </div>
+                        <div class="convo-bubble randy">
+                            <div class="convo-label">Randy</div>
+                            "Got it. I'll pull every MA operator with weak beverage selection—fewer than 3 SKUs. I'll include buyer contacts, store health signals, and talking points. Give me 48 hours."
+                        </div>
+                        <div class="convo-bubble you">
+                            <div class="convo-label">You</div>
+                            "Perfect."
+                        </div>
+                        <div class="convo-bubble randy">
+                            <div class="convo-label">Randy</div>
+                            "Done. 47 qualified leads in your inbox. Go close some deals."
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Menu Gap Deep Dive -->
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="how-header">
+                <div class="section-label">How It Works</div>
+                <h2 class="section-title">Three Steps. That's It.</h2>
+                <p>No onboarding. No training. No figuring it out yourself.</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📞</div>
+                    <h3>Quick Call</h3>
+                    <p>15 minutes. Tell Randy what you sell, who your ideal buyer is, and what matters most. That's all he needs.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🔍</div>
+                    <h3>We Analyze</h3>
+                    <p>Randy digs through 600+ operators. Menu gaps. Growth signals. Buyer contacts. He builds your custom intel package.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📥</div>
+                    <h3>You Receive</h3>
+                    <p>Within 48 hours: a clean CSV, context brief, and talk tracks. Ready to use. Start closing deals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="deliverables">
+        <div class="container">
+            <div class="deliverables-header">
+                <div class="section-label">What You Get</div>
+                <h2 class="section-title">Everything Delivered, Ready to Use</h2>
+                <p>No assembly required. Open the email, start selling.</p>
+            </div>
+            
+            <div class="deliverables-grid">
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">📊</div>
+                    <div>
+                        <h4>Qualified Lead List</h4>
+                        <p>Your top prospects ranked by fit for YOUR product. Not generic—customized to your category and goals.</p>
+                        <div class="deliverable-badge">Clean CSV format</div>
+                    </div>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">👤</div>
+                    <div>
+                        <h4>Decision Maker Contacts</h4>
+                        <p>Actual buyer names and emails. Not info@ black holes. The people who sign purchase orders.</p>
+                        <div class="deliverable-badge">Verified contacts</div>
+                    </div>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">📈</div>
+                    <div>
+                        <h4>Store Health Signals</h4>
+                        <p>Review velocity, hiring activity, operational status. Know who's growing vs. who's struggling.</p>
+                        <div class="deliverable-badge">Weekly verified</div>
+                    </div>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">💬</div>
+                    <div>
+                        <h4>Talk Tracks & Context</h4>
+                        <p>Brief on each priority account. What they're missing, why they need you, how to open the conversation.</p>
+                        <div class="deliverable-badge">Sales-ready</div>
+                    </div>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">🎯</div>
+                    <div>
+                        <h4>Menu Gap Analysis</h4>
+                        <p>Dispensaries with holes in your category. They need what you sell—they just don't know it yet.</p>
+                        <div class="deliverable-badge">Our killer feature</div>
+                    </div>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-icon">🔄</div>
+                    <div>
+                        <h4>30-Day Refresh</h4>
+                        <p>Markets move fast. You get one free data refresh within 30 days. Always current, always relevant.</p>
+                        <div class="deliverable-badge">Included</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Gap Explanation -->
     <section class="menu-gap-section">
         <div class="container">
             <div class="menu-gap-content">
                 <div class="menu-gap-text">
-                    <div class="section-label">The Killer Feature</div>
-                    <h2>The Menu Gap is <span>Your Sales Gap</span></h2>
+                    <div class="section-label">Why It Works</div>
+                    <h2>The Menu Gap Is <span>Your Opportunity</span></h2>
                     <p>Every dispensary has holes in their menu. Maybe they carry one beverage brand. Maybe zero topicals. Those gaps aren't problems—they're opportunities wearing name tags.</p>
-                    <p>Menu Gap Analysis lets you filter the Priority 150 by category deficiency. You sell beverages? Show me every store carrying fewer than 3 beverage SKUs. Instant qualified lead list.</p>
-                    
-                    <div class="highlight-box">
-                        <p><strong>Real example:</strong> A beverage brand filtered for "<3 beverage SKUs" and found 47 stores actively looking to diversify. That filter alone closed 6 accounts in Q3.</p>
-                    </div>
+                    <p>We analyze every menu in the state. When you tell us your category, we find every store that's underserving it. Those stores need what you sell. They just haven't found you yet.</p>
                 </div>
                 
-                <div class="menu-gap-visual">
-                    <div class="visual-header">
+                <div class="menu-gap-example">
+                    <div class="example-header">
                         <div class="visual-dot"></div>
-                        <div class="visual-label">Live Query • Menu Gap Analysis</div>
+                        <span>Real Example</span>
                     </div>
                     
-                    <div class="filter-row">
-                        <div class="filter-tag">Category: Beverages</div>
-                        <div class="filter-tag">SKUs: &lt; 3</div>
-                        <div class="filter-tag">Status: Verified Open</div>
+                    <div class="example-scenario">
+                        <h4>Beverage Brand Inquiry</h4>
+                        <p>"We make cannabis-infused seltzers. Who in MA needs more beverage options?"</p>
                     </div>
                     
-                    <div class="results-preview">
-                        <div class="results-count">
-                            <span>47</span> qualified leads found
-                        </div>
-                        
-                        <div class="result-item">
-                            <div>
-                                <div class="result-name">Green Valley Dispensary</div>
-                                <div class="result-meta">Worcester • 127 reviews/mo</div>
-                            </div>
-                            <div class="result-gap">1 SKU</div>
-                        </div>
-                        <div class="result-item">
-                            <div>
-                                <div class="result-name">Coastal Cannabis Co.</div>
-                                <div class="result-meta">Plymouth • 89 reviews/mo</div>
-                            </div>
-                            <div class="result-gap">0 SKUs</div>
-                        </div>
-                        <div class="result-item">
-                            <div>
-                                <div class="result-name">Summit Wellness</div>
-                                <div class="result-meta">Springfield • 156 reviews/mo</div>
-                            </div>
-                            <div class="result-gap">2 SKUs</div>
-                        </div>
+                    <div class="example-scenario">
+                        <h4>Randy's Analysis</h4>
+                        <p>Filtered all 600+ operators for stores carrying fewer than 3 beverage SKUs. Cross-referenced with growth signals and buyer contacts.</p>
+                    </div>
+                    
+                    <div class="example-result">
+                        <div class="result-text">Qualified leads delivered</div>
+                        <div class="result-number">47</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Who This Is For -->
+    <!-- Who This Helps -->
     <section class="audience-section">
         <div class="container">
-            <div class="section-label">Fit Check</div>
-            <h2 class="section-title">Is This For You?</h2>
+            <div class="audience-header">
+                <div class="section-label">Who This Helps</div>
+                <h2 class="section-title">Built for People Who Sell to Dispensaries</h2>
+                <p>If you're trying to get products on dispensary shelves in Massachusetts, this is for you.</p>
+            </div>
             
-            <div class="audience-grid">
-                <div class="audience-box for">
-                    <div class="audience-header">
-                        <span class="audience-icon">✓</span>
-                        <h3>This Is For You If...</h3>
-                    </div>
-                    <ul class="audience-list">
-                        <li>You sell products to cannabis retailers (brands, distributors)</li>
-                        <li>Your sales team wastes time on dead or inactive accounts</li>
-                        <li>You need to prioritize limited outreach capacity</li>
-                        <li>You're launching a new product category in MA</li>
-                        <li>You want to identify growth accounts before competitors</li>
-                        <li>One closed deal would 4-40x your investment</li>
-                    </ul>
+            <div class="audience-cards">
+                <div class="audience-card">
+                    <div class="audience-icon">🍃</div>
+                    <h3>Cannabis Brands</h3>
+                    <p>Launching a new product? Expanding distribution? We find the stores that actually need your category and aren't already saturated.</p>
                 </div>
-                
-                <div class="audience-box not-for">
-                    <div class="audience-header">
-                        <span class="audience-icon">✕</span>
-                        <h3>This Is NOT For You If...</h3>
-                    </div>
-                    <ul class="audience-list">
-                        <li>You're a dispensary (you already know your competition)</li>
-                        <li>You need data outside Massachusetts</li>
-                        <li>You expect 100% accuracy (no data is perfect)</li>
-                        <li>You don't have a sales process to act on leads</li>
-                        <li>Your average deal size is under $500</li>
-                        <li>You're looking for consumer-facing insights</li>
-                    </ul>
+                <div class="audience-card">
+                    <div class="audience-icon">📦</div>
+                    <h3>Distributors</h3>
+                    <p>Represent multiple brands? We help you prioritize which stores to hit first—based on what they're missing, not what you're guessing.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">🤝</div>
+                    <h3>Sales Brokers</h3>
+                    <p>Time is money. Stop wasting it on cold calls to stores that aren't buying. Get warm leads that actually convert.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Methodology -->
-    <section class="methodology-section">
-        <div class="container">
-            <div class="methodology-content">
-                <div class="methodology-text">
-                    <div class="section-label">Methodology</div>
-                    <h2 class="section-title">How We Build the Intelligence</h2>
-                    <p style="color: var(--support-silver); margin-top: 24px; line-height: 1.8;">Data quality is everything. We cross-reference multiple sources, verify weekly, and flag uncertainty. When we're not sure, we tell you.</p>
-                </div>
-                
-                <div class="methodology-sources">
-                    <div class="source-card">
-                        <div class="source-icon">🏛️</div>
-                        <div>
-                            <h4>CCC License Data</h4>
-                            <p>Base layer. Active licenses, addresses, license types. Updated as CCC publishes.</p>
-                        </div>
-                    </div>
-                    <div class="source-card">
-                        <div class="source-icon">⭐</div>
-                        <div>
-                            <h4>Google Business Signals</h4>
-                            <p>Review counts, velocity, hours, photos. Weekly scrapes for freshness.</p>
-                        </div>
-                    </div>
-                    <div class="source-card">
-                        <div class="source-icon">🍃</div>
-                        <div>
-                            <h4>Menu Aggregators</h4>
-                            <p>Dutchie, Weedmaps, Jane. Product counts, category depth, pricing signals.</p>
-                        </div>
-                    </div>
-                    <div class="source-card">
-                        <div class="source-icon">💼</div>
-                        <div>
-                            <h4>Job Boards</h4>
-                            <p>Indeed, LinkedIn, ZipRecruiter. Hiring activity = growth signals.</p>
-                        </div>
-                    </div>
-                    <div class="source-card">
-                        <div class="source-icon">🔍</div>
-                        <div>
-                            <h4>Manual Verification</h4>
-                            <p>Phone calls, site checks, LinkedIn research. The human layer.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ROI Section -->
-    <section class="roi-section">
-        <div class="container">
-            <div class="roi-content">
-                <div class="section-label">The Math</div>
-                <h2 class="roi-headline">One Deal Pays for <span>Everything</span></h2>
-                
-                <div class="roi-math">
-                    <div class="roi-item">
-                        <div class="roi-value">$2,500</div>
-                        <div class="roi-label">One-Time Investment</div>
-                    </div>
-                    <div class="roi-item">
-                        <div class="roi-value">$10K+</div>
-                        <div class="roi-label">Average Brand Deal Size</div>
-                    </div>
-                    <div class="roi-item">
-                        <div class="roi-value">4-40x</div>
-                        <div class="roi-label">Return on One Closed Deal</div>
-                    </div>
-                </div>
-                
-                <p style="color: var(--support-silver); font-size: 18px; max-width: 600px; margin: 0 auto;">If this data helps you close even one account you would have missed, it pays for itself. Close two, and it's a no-brainer.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
+    <!-- Pricing -->
     <section class="pricing-section">
         <div class="container">
-            <div class="pricing-header">
-                <div class="section-label">Investment</div>
-                <h2>Choose Your Access</h2>
-                <p style="color: var(--support-silver); margin-top: 16px;">Limited to 3 buyers per quarter to maintain data exclusivity.</p>
-            </div>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card featured">
-                    <div class="pricing-type">One-Time Purchase</div>
-                    <div class="pricing-amount">$2,500</div>
-                    <div class="pricing-desc">Complete intelligence package with 30-day refresh guarantee</div>
-                    <ul class="pricing-features">
-                        <li>The Priority 150 ranked list</li>
-                        <li>Menu Gap Analysis filters</li>
-                        <li>Live status verification</li>
-                        <li>Decision maker contacts</li>
-                        <li>Review velocity data</li>
-                        <li>Hiring signals</li>
-                        <li>30-day data refresh included</li>
-                        <li>CSV + Airtable delivery</li>
-                    </ul>
-                    <a href="mailto:randy@roviqai.xyz?subject=Intel%20Pack%20-%20One%20Time" class="pricing-cta primary">Get Started →</a>
+            <div class="pricing-wrapper">
+                <div class="pricing-header">
+                    <div class="section-label">Investment</div>
+                    <h2>One Price. Everything Included.</h2>
+                    <p>No subscriptions. No hidden fees. No upsells.</p>
                 </div>
                 
                 <div class="pricing-card">
-                    <div class="pricing-type">Monthly Subscription</div>
-                    <div class="pricing-amount">$499<span>/mo</span></div>
-                    <div class="pricing-desc">Ongoing intelligence with weekly priority updates</div>
-                    <ul class="pricing-features">
-                        <li>Everything in one-time, plus:</li>
-                        <li>Weekly priority updates</li>
-                        <li>New operator alerts</li>
-                        <li>Hiring signal notifications</li>
-                        <li>Quarterly trend reports</li>
-                        <li>Priority support</li>
-                        <li>Cancel anytime</li>
-                    </ul>
-                    <a href="mailto:randy@roviqai.xyz?subject=Intel%20Pack%20-%20Monthly" class="pricing-cta secondary">Inquire →</a>
-                </div>
-            </div>
-            
-            <div class="scarcity-notice">
-                <p>⚠️ Limited to 3 buyers per quarter to maintain competitive advantage for subscribers.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <div class="faq-header">
-                <div class="section-label">FAQ</div>
-                <h2>Common Questions</h2>
-            </div>
-            
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h4>How accurate is the data?</h4>
-                    <p>We verify weekly using multiple sources. That said, no dataset is 100% perfect. We flag confidence levels and uncertainty. Expect 85-90% accuracy on operational status, higher on static data.</p>
+                    <div class="pricing-badge">COMPLETE SERVICE</div>
+                    <div class="pricing-label">One-Time Investment</div>
+                    <div class="pricing-amount">$2,500</div>
+                    <div class="pricing-desc">Full intel package, customized to your product category</div>
+                    
+                    <div class="pricing-includes">
+                        <h4>Everything Included:</h4>
+                        <ul class="includes-list">
+                            <li>Custom lead list</li>
+                            <li>Menu gap analysis</li>
+                            <li>Decision maker contacts</li>
+                            <li>Store health signals</li>
+                            <li>Talk tracks & context</li>
+                            <li>30-day data refresh</li>
+                            <li>Clean CSV delivery</li>
+                            <li>Direct access to Randy</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="mailto:randy@roviqai.xyz?subject=Intel%20Service%20-%20Ready%20to%20Start" class="pricing-cta">Book Your Call →</a>
+                    <div class="pricing-subtext">One deal pays for everything. Close two, and it's a no-brainer.</div>
                 </div>
                 
-                <div class="faq-item">
-                    <h4>What format does the data come in?</h4>
-                    <p>You'll receive a clean CSV file plus an Airtable base with filters pre-configured. Menu Gap Analysis works through Airtable filters.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>Why limit to 3 buyers per quarter?</h4>
-                    <p>This data is valuable because it's not widely available. If everyone has it, nobody has an edge. We cap access to maintain competitive advantage.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>Can I share this with my team?</h4>
-                    <p>Yes, internal team use is fine. Just don't resell or share with competitors. Standard stuff.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>What if I need data outside Massachusetts?</h4>
-                    <p>We're focused on MA for now. If there's demand, we may expand. Let us know what markets matter to you.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4>Is there a refund policy?</h4>
-                    <p>Given the nature of data products, no refunds after delivery. We're happy to show sample data structure before purchase.</p>
+                <div class="scarcity-notice">
+                    <p>⚠️ Limited to 3 clients per quarter to maintain data exclusivity.</p>
                 </div>
             </div>
         </div>
@@ -1462,16 +1378,18 @@
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Stop <span>Guessing?</span></h2>
-                <p>Join the vendors who close deals while competitors chase ghosts. Only 3 spots per quarter.</p>
+                <p>One quick call. Tell Randy what you sell. Get a qualified buyer list delivered to your inbox. It's that simple.</p>
                 
-                <a href="mailto:randy@roviqai.xyz?subject=Intel%20Pack%20Inquiry" class="cta-button">
-                    Request Access
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                </a>
+                <div class="cta-buttons">
+                    <a href="mailto:randy@roviqai.xyz?subject=Let's%20Talk%20Intel" class="cta-primary">
+                        Email Randy →
+                    </a>
+                    <a href="mailto:randy@roviqai.xyz?subject=Quick%20Question" class="cta-secondary">
+                        Ask a Question
+                    </a>
+                </div>
                 
-                <p class="cta-subtext">randy@roviqai.xyz • Response within 24 hours</p>
+                <p class="cta-subtext"><a href="mailto:randy@roviqai.xyz">randy@roviqai.xyz</a> • Response within 24 hours</p>
             </div>
         </div>
     </section>
@@ -1480,10 +1398,10 @@
     <footer>
         <div class="container">
             <div class="footer-text">
-                © 2025 Roviq AI. MA Market Pulse — Operator Signals Pack.
+                © 2025 Roviq AI. Massachusetts Cannabis Market Intelligence.
             </div>
             <div class="footer-links">
-                <a href="mailto:randy@roviqai.xyz">Contact</a>
+                <a href="mailto:randy@roviqai.xyz">randy@roviqai.xyz</a>
             </div>
         </div>
     </footer>
@@ -1504,10 +1422,10 @@
             });
         }, observerOptions);
         
-        document.querySelectorAll('.bento-card, .problem-card, .source-card, .faq-item, .audience-box, .pricing-card').forEach(el => {
+        document.querySelectorAll('.pain-card, .step-card, .deliverable-card, .audience-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
     </script>
