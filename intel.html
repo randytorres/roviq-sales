@@ -13,9 +13,10 @@
             --surface-color: #ffffff;
             --text-main: #1a1a1a;
             --text-muted: #555555;
-            --accent-color: #1a5f4a;
-            --accent-hover: #144a39;
-            --border-color: #e0e0e0;
+            --accent-color: #4f46e5; /* Deep Indigo */
+            --accent-hover: #4338ca;
+            --accent-light: #e0e7ff;
+            --border-color: #e5e7eb;
             --font-heading: 'Space Grotesk', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
@@ -32,13 +33,12 @@
             color: var(--text-main);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            /* Subtle texture */
-            background-image: radial-gradient(#e5e5e5 1px, transparent 1px);
-            background-size: 20px 20px;
+            background-image: radial-gradient(#d4d4d8 1px, transparent 1px);
+            background-size: 24px 24px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 24px;
         }
@@ -47,223 +47,304 @@
         .text-accent { color: var(--accent-color); }
         .text-center { text-align: center; }
         .flex { display: flex; }
+        .flex-col { flex-direction: column; }
         .items-center { align-items: center; }
         .justify-center { justify-content: center; }
+        .grid { display: grid; }
         .gap-4 { gap: 1rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-8 { gap: 2rem; }
         .mt-4 { margin-top: 1rem; }
         .mt-8 { margin-top: 2rem; }
+        .mt-12 { margin-top: 3rem; }
         .mb-4 { margin-bottom: 1rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+        .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
 
         /* Typography */
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: var(--font-heading);
             font-weight: 700;
             line-height: 1.2;
             letter-spacing: -0.02em;
+            color: var(--text-main);
         }
         
-        h1 { font-size: 3rem; margin-bottom: 1rem; }
-        h2 { font-size: 2rem; margin-bottom: 1rem; }
-        h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
-        p { font-size: 1.125rem; color: var(--text-muted); }
+        h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+        h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+        h4 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+        p { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 1rem; }
+        
+        strong { color: var(--text-main); font-weight: 600; }
 
         /* Hero */
         .hero {
-            padding: 5rem 0 3rem;
+            padding: 6rem 0 4rem;
             text-align: center;
         }
 
         .tag {
             display: inline-block;
-            background-color: rgba(26, 95, 74, 0.1);
+            background-color: var(--accent-light);
             color: var(--accent-color);
-            padding: 4px 12px;
+            padding: 6px 16px;
             border-radius: 100px;
             font-size: 0.875rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-family: var(--font-heading);
+            letter-spacing: 0.02em;
         }
 
-        /* Signup Form */
+        /* Forms */
         .signup-form {
-            max-width: 480px;
+            max-width: 520px;
             margin: 2rem auto;
             display: flex;
-            gap: 8px;
+            gap: 12px;
         }
 
         input[type="email"] {
             flex: 1;
-            padding: 12px 16px;
-            border: 1px solid #d1d1d1;
+            padding: 14px 18px;
+            border: 1px solid #d1d5db;
             border-radius: 8px;
             font-size: 1rem;
             outline: none;
-            transition: border-color 0.2s;
+            transition: all 0.2s;
             font-family: var(--font-body);
         }
 
         input[type="email"]:focus {
             border-color: var(--accent-color);
-            box-shadow: 0 0 0 2px rgba(26, 95, 74, 0.1);
+            box-shadow: 0 0 0 3px var(--accent-light);
         }
 
         .btn {
             background-color: var(--accent-color);
             color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 14px 28px;
             border-radius: 8px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.2s, transform 0.1s;
+            transition: all 0.2s;
             white-space: nowrap;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .btn:hover {
             background-color: var(--accent-hover);
+            transform: translateY(-1px);
         }
 
         .btn:active {
             transform: translateY(1px);
         }
 
+        .btn-lg {
+            font-size: 1.125rem;
+            padding: 16px 32px;
+        }
+
         .btn-outline {
             background-color: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
         }
+        
         .btn-outline:hover {
-            border-color: var(--text-main);
-            background-color: transparent;
+            background-color: var(--accent-light);
+            color: var(--accent-hover);
         }
 
         .social-proof {
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
         .dot {
             width: 8px;
             height: 8px;
             background-color: #22c55e;
             border-radius: 50%;
-            display: inline-block;
         }
 
-        /* Features */
-        .features {
-            padding: 4rem 0;
+        /* Sections */
+        .section-box {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        /* Feature List */
+        .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .feature-item {
             padding: 1.5rem;
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
+            background: #f8fafc;
             border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
             transition: transform 0.2s;
         }
         
         .feature-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.04);
         }
 
         .icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(26, 95, 74, 0.1);
-            color: var(--accent-color);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 1.75rem;
             margin-bottom: 1rem;
-            font-size: 1.25rem;
+            display: inline-block;
         }
 
-        /* Data Preview */
-        .preview-section {
-            padding: 3rem 0;
-            text-align: center;
+        /* Audience Grid */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: left;
         }
-
-        .preview-card {
-            background: var(--surface-color);
+        
+        .audience-card {
+            padding: 1.5rem;
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
-            margin: 2rem auto;
-            max-width: 600px;
+            background: white;
+        }
+
+        /* Data Table */
+        .data-table-container {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: white;
+            margin: 2rem 0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
             text-align: left;
+            min-width: 600px;
+        }
+
+        th {
+            background-color: #f9fafb;
+            padding: 1rem 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.95rem;
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .status-active { background: #dcfce7; color: #166534; }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .distress-high { color: #dc2626; font-weight: 600; }
+        .distress-med { color: #ea580c; font-weight: 600; }
+        .distress-low { color: #16a34a; font-weight: 600; }
+
+        /* Testimonial */
+        .testimonial {
+            text-align: center;
+            max-width: 700px;
+            margin: 4rem auto;
+            font-style: italic;
+        }
+        .testimonial blockquote {
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+        .testimonial cite {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-style: normal;
+        }
+
+        /* Upsell Section */
+        .upsell-card {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
-
-        .preview-header {
+        
+        .upsell-card h2, .upsell-card p { color: white; }
+        .upsell-card p { color: #c7d2fe; max-width: 600px; margin: 0 auto 2rem; }
+        
+        .upsell-features {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .preview-badge {
-            background: #ffe4e6;
-            color: #be123c;
-            font-size: 0.75rem;
-            padding: 2px 8px;
-            border-radius: 100px;
-            font-weight: 600;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
         }
         
-        .preview-badge.growth {
-            background: #dcfce7;
-            color: #15803d;
+        .upsell-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
         }
 
-        .data-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f5f5f5;
-            font-size: 0.9rem;
+        .btn-white {
+            background: white;
+            color: var(--accent-color);
         }
-        .data-row:last-child { border-bottom: none; }
-        .blur-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding-bottom: 1rem;
+        .btn-white:hover {
+            background: #f8fafc;
         }
 
-        /* Upsell */
-        .upsell-section {
-            background-color: #f1f0ec; /* Slightly darker than bg */
-            border-radius: 16px;
-            padding: 3rem 2rem;
-            margin: 4rem 0;
-            text-align: center;
-            border: 1px solid #e5e5e5;
+        /* FAQ */
+        .faq-grid {
+            max-width: 700px;
+            margin: 0 auto;
         }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; display: block; }
 
         /* Footer */
         footer {
@@ -271,21 +352,56 @@
             padding: 4rem 0;
             color: var(--text-muted);
             font-size: 0.9rem;
-            border-top: 1px solid #eee;
-            margin-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
         }
 
         footer a {
-            color: var(--text-main);
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: 500;
         }
-        
-        /* Mobile */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.25rem; }
-            .signup-form { flex-direction: column; }
-            .btn { width: 100%; }
+
+        /* Mobile Responsive */
+        @media (max-width: 640px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .hero { padding: 4rem 0 2rem; }
+            
+            .signup-form { 
+                flex-direction: column; 
+            }
+            
+            .btn { 
+                width: 100%; 
+                display: flex;
+                justify-content: center;
+            }
+            
+            .section-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .data-table-container {
+                margin: 1.5rem -1.5rem; /* Bleed to edges */
+                width: calc(100% + 3rem);
+                border-left: none;
+                border-right: none;
+                border-radius: 0;
+            }
+            
+            table { min-width: 500px; } /* Allow scroll */
+            
+            .upsell-features {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+                text-align: left;
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
     </style>
 </head>
@@ -293,108 +409,201 @@
 
     <div class="container">
         
-        <!-- Hero Section -->
+        <!-- 1. Hero -->
         <section class="hero">
-            <span class="tag">Bi-Weekly Market Intelligence</span>
-            <h1>See which MA dispensaries are <br>growing, stalling, or dying.</h1>
-            <p>Before your competitors do. Get actionable intel on Massachusetts cannabis operators delivered to your inbox every other Thursday.</p>
+            <span class="tag">Market Intelligence for MA Cannabis</span>
+            <h1>Spot opportunity before<br>the competition does.</h1>
+            <p style="max-width: 600px; margin: 0 auto 2rem;">
+                Get actionable data on Massachusetts cannabis operators delivered to your inbox every other Thursday. Track growth, distress, and buyer trends.
+            </p>
 
             <form class="signup-form">
-                <input type="email" placeholder="Enter your work email" required>
-                <button type="submit" class="btn">Subscribe for Free</button>
+                <input type="email" placeholder="Enter your work email" required aria-label="Email address">
+                <button type="submit" class="btn btn-lg">Get the Intel Brief</button>
             </form>
             
             <div class="social-proof">
                 <span class="dot"></span>
-                <span>Trusted by 50+ cannabis brands. Data on 150+ operators.</span>
+                <span>Tracking 150+ MA operators. Read by 1,200+ industry leaders.</span>
             </div>
         </section>
 
-        <!-- Features Grid -->
-        <section class="features">
-            <div class="feature-item">
-                <div class="icon">🚀</div>
-                <h3>New License Alerts</h3>
-                <p style="font-size: 0.95rem;">Be the first to know who just opened. Pitch your product before the shelves are full.</p>
+        <!-- 2. What's Inside -->
+        <section class="py-16">
+            <div class="text-center mb-8">
+                <h2>What's Inside Every Issue</h2>
+                <p>Curated insights you won't find on general news sites.</p>
             </div>
-            <div class="feature-item">
-                <div class="icon">📉</div>
-                <h3>Distress Signals</h3>
-                <p style="font-size: 0.95rem;">Identify struggling operators. Spot acquisition targets or credit risks early.</p>
-            </div>
-            <div class="feature-item">
-                <div class="icon">🤝</div>
-                <h3>Buyer Intel</h3>
-                <p style="font-size: 0.95rem;">Get contact info and buyer preferences for top dispensaries in the state.</p>
-            </div>
-        </section>
-
-        <!-- Data Preview -->
-        <section class="preview-section">
-            <h2 style="font-size: 1.5rem;">What's inside?</h2>
-            <p>A peek at the data you'll get in every issue.</p>
             
-            <div class="preview-card">
-                <div class="preview-header">
-                    <span style="font-weight: 700; font-family: var(--font-heading);">Recent Movements</span>
-                    <span style="font-size: 0.85rem; color: #888;">Oct 12 - Oct 26</span>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="icon">🚨</span>
+                    <h4>New License Alerts</h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">Who just opened, where they are, and what inventory they need immediately.</p>
                 </div>
-                
-                <div class="data-row">
-                    <div>
-                        <div style="font-weight: 600;">Green Harbor - location #3</div>
-                        <div style="font-size: 0.8rem; color: #666;">Boston, MA</div>
-                    </div>
-                    <span class="preview-badge growth">New Open</span>
+                <div class="feature-item">
+                    <span class="icon">📉</span>
+                    <h4>Distress Signals</h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">Identify operators who are struggling. Perfect for M&A or risk assessment.</p>
                 </div>
-
-                <div class="data-row">
-                    <div>
-                        <div style="font-weight: 600;">Elevated Roots</div>
-                        <div style="font-size: 0.8rem; color: #666;">Kingston, MA</div>
-                    </div>
-                    <span class="preview-badge" style="background:#f3f4f6; color:#4b5563;">Expansion Planned</span>
+                <div class="feature-item">
+                    <span class="icon">🛒</span>
+                    <h4>Buyer Intel</h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">Know who is actually making purchasing decisions this month.</p>
                 </div>
-
-                <div class="data-row">
-                    <div>
-                        <div style="font-weight: 600;">CannaCorner</div>
-                        <div style="font-size: 0.8rem; color: #666;">Worcester, MA</div>
-                    </div>
-                    <span class="preview-badge">License Suspended</span>
+                <div class="feature-item">
+                    <span class="icon">📊</span>
+                    <h4>Competitive Landscape</h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">See which brands are winning shelf space and where gaps exist.</p>
                 </div>
-                
-                <div class="data-row" style="opacity: 0.5;">
-                    <div>
-                        <div style="font-weight: 600;">Mystic River Cannabis</div>
-                        <div style="font-size: 0.8rem; color: #666;">Medford, MA</div>
-                    </div>
-                    <span class="preview-badge growth">Hiring Spree</span>
-                </div>
-
-                <div class="blur-bottom">
-                    <!-- <span style="font-size: 0.8rem; color: #888; background: white; padding: 4px 12px; border-radius: 100px; border: 1px solid #eee;">+ 12 more updates</span> -->
+                <div class="feature-item">
+                    <span class="icon">📈</span>
+                    <h4>Market Trends</h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;">Pricing shifts, category growth, and regional purchasing patterns.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Upsell -->
-        <section class="upsell-section">
-            <h2 style="font-size: 1.75rem;">Need the raw data?</h2>
-            <p style="margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-                Get the full CSV export of all 150+ MA operators, including buyer contacts, license status, and monthly sales estimates.
-            </p>
-            <div class="flex items-center justify-center gap-4" style="flex-wrap: wrap;">
-                <button class="btn">Get the Intel Pack ($500)</button>
-                <button class="btn btn-outline" style="border: 1px solid #aaa;">View Sample Data</button>
+        <!-- 3. Who This Is For -->
+        <section class="section-box">
+            <h2 class="text-center">Who Needs This Intel?</h2>
+            <div class="audience-grid mt-8">
+                <div class="audience-card">
+                    <h4>Brands</h4>
+                    <p style="font-size: 0.9rem; margin:0;">Looking for reliable retail partners and shelf space.</p>
+                </div>
+                <div class="audience-card">
+                    <h4>Cultivators</h4>
+                    <p style="font-size: 0.9rem; margin:0;">Seeking distribution channels for bulk flower.</p>
+                </div>
+                <div class="audience-card">
+                    <h4>Manufacturers</h4>
+                    <p style="font-size: 0.9rem; margin:0;">Expanding product lines into MA dispensaries.</p>
+                </div>
+                <div class="audience-card">
+                    <h4>Service Providers</h4>
+                    <p style="font-size: 0.9rem; margin:0;">Selling compliance, tech, or equipment solutions.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Cross Link & Footer -->
+        <!-- 4. The Data Advantage -->
+        <div class="text-center py-16">
+            <h2>The Data Advantage</h2>
+            <p>We don't just scrape news. We analyze the market.</p>
+            
+            <div class="flex justify-center gap-4 mt-8" style="flex-wrap: wrap;">
+                <span style="background:white; border:1px solid #ddd; padding:8px 16px; border-radius:100px; font-weight:500;">150+ MA Operators</span>
+                <span style="background:white; border:1px solid #ddd; padding:8px 16px; border-radius:100px; font-weight:500;">Distress Scores</span>
+                <span style="background:white; border:1px solid #ddd; padding:8px 16px; border-radius:100px; font-weight:500;">License Monitoring</span>
+                <span style="background:white; border:1px solid #ddd; padding:8px 16px; border-radius:100px; font-weight:500;">Menu Gap Analysis</span>
+            </div>
+        </div>
+
+        <!-- 5. Sample Data Preview -->
+        <section class="mb-12">
+            <h3 class="text-center">Sample Operator Data</h3>
+            <div class="data-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Rating</th>
+                            <th>Distress Level</th>
+                            <th>Status</th>
+                            <th>Last Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Legal Greens</strong></td>
+                            <td>4.9 ★</td>
+                            <td class="distress-low">Low</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>2 days ago</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tower Three</strong></td>
+                            <td>4.6 ★</td>
+                            <td class="distress-med">Medium</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td>1 week ago</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Green Harbor</strong></td>
+                            <td>4.8 ★</td>
+                            <td class="distress-low">Low</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td>Yesterday</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Coastal Healing</strong></td>
+                            <td>3.2 ★</td>
+                            <td class="distress-high">High</td>
+                            <td><span class="status-badge status-pending">Under Review</span></td>
+                            <td>3 days ago</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-center" style="font-size: 0.9rem;">*Actual data available in the Intel Pack.</p>
+        </section>
+
+        <!-- 6. Intel Pack Upsell -->
+        <section class="upsell-card">
+            <h2>Get the Full Picture</h2>
+            <p>Stop guessing. Get the complete dataset on every operator in the state.</p>
+            
+            <div class="upsell-features">
+                <div class="upsell-feature">✅ Full 150+ Operator Export</div>
+                <div class="upsell-feature">✅ Decision Maker Contacts</div>
+                <div class="upsell-feature">✅ Distress Scores</div>
+                <div class="upsell-feature">✅ Menu Analysis</div>
+            </div>
+
+            <button class="btn btn-white btn-lg">Buy Intel Pack ($500)</button>
+        </section>
+
+        <!-- 7. Testimonial -->
+        <section class="testimonial">
+            <blockquote>"Finally, data that actually helps us prioritize our outreach. We closed 3 new accounts in the first week."</blockquote>
+            <cite>— Sarah J., Brand Director</cite>
+        </section>
+
+        <!-- 8. FAQ -->
+        <section class="py-16" style="max-width: 800px; margin: 0 auto;">
+            <h2 class="text-center mb-8">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <span class="faq-q">How often is the newsletter sent?</span>
+                    <p style="margin:0;">Every other Thursday morning, right to your inbox.</p>
+                </div>
+                <div class="faq-item">
+                    <span class="faq-q">Is the newsletter free?</span>
+                    <p style="margin:0;">Yes, the bi-weekly Market Intel Brief is 100% free.</p>
+                </div>
+                <div class="faq-item">
+                    <span class="faq-q">What is the Intel Pack?</span>
+                    <p style="margin:0;">The Intel Pack is a one-time purchase ($500) that gives you our complete raw dataset in CSV format, including contact info and proprietary scores.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Final CTA -->
+        <section class="section-box text-center" style="background: var(--accent-light); border-color: var(--accent-light);">
+            <h2 style="color: var(--accent-color);">Start making smarter decisions.</h2>
+            <p>Join the list today.</p>
+            <form class="signup-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn">Subscribe Now</button>
+            </form>
+        </section>
+
+        <!-- 10. Cross-link & Footer -->
         <footer>
             <div style="margin-bottom: 2rem;">
-                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Are you a dispensary operator?</p>
-                <a href="#" style="text-decoration: underline; color: var(--accent-color);">Check out our Operator Optimization Newsletter &rarr;</a>
+                <p style="margin-bottom: 0.5rem;">Running a dispensary?</p>
+                <a href="#">Check out our Operator Optimization Newsletter &rarr;</a>
             </div>
             
             <p>&copy; 2024 Roviq. All rights reserved.</p>

@@ -46,10 +46,11 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
             letter-spacing: -0.02em;
+            color: #fff;
         }
 
         .container {
@@ -73,11 +74,32 @@
             pointer-events: none;
         }
 
+        /* Section Spacing */
+        section {
+            margin: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+        
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
         /* Hero */
         .hero {
             padding-top: 120px;
-            padding-bottom: 80px;
+            padding-bottom: 0px;
             text-align: center;
+            margin-bottom: 80px;
         }
 
         .tag {
@@ -93,7 +115,7 @@
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 56px;
             line-height: 1.1;
             margin-bottom: 24px;
             background: linear-gradient(to bottom, #ffffff, #e0e0e0);
@@ -103,7 +125,7 @@
 
         .hero p {
             color: var(--text-muted);
-            font-size: 18px;
+            font-size: 20px;
             max-width: 600px;
             margin: 0 auto 40px;
         }
@@ -131,6 +153,7 @@
             color: white;
             font-size: 16px;
             transition: all 0.2s;
+            -webkit-appearance: none; /* iOS fix */
         }
 
         input[type="email"]:focus {
@@ -140,7 +163,7 @@
         }
 
         button.cta {
-            padding: 0 32px;
+            padding: 16px 32px;
             background: var(--accent-color);
             color: #000;
             font-weight: 600;
@@ -150,11 +173,15 @@
             transition: all 0.2s;
             font-size: 16px;
             white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         button.cta:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 20px rgba(212, 168, 83, 0.3);
+            background: #e5b960;
         }
 
         .social-proof {
@@ -164,6 +191,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            flex-wrap: wrap;
         }
 
         .social-proof span {
@@ -171,132 +199,269 @@
             font-weight: 500;
         }
 
-        /* Features */
-        .features {
+        /* Feature Grid */
+        .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
-            margin: 80px 0;
         }
 
         .feature-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-color);
-            padding: 24px;
+            padding: 32px 24px;
             border-radius: 12px;
-            transition: transform 0.2s;
+            transition: all 0.2s;
+            height: 100%;
         }
 
         .feature-card:hover {
             border-color: rgba(212, 168, 83, 0.3);
+            transform: translateY(-2px);
         }
 
         .feature-icon {
             color: var(--accent-color);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            background: rgba(212, 168, 83, 0.1);
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .feature-card h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
+            font-size: 20px;
+            margin-bottom: 12px;
         }
 
         .feature-card p {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 15px;
+            line-height: 1.6;
         }
 
-        /* Preview */
+        /* Audience Section */
+        .audience-section {
+            background: rgba(255, 255, 255, 0.015);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 100px 0;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        .audience-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .audience-item {
+            text-align: left;
+        }
+
+        .audience-item h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--accent-color);
+        }
+
+        .audience-item p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Preview Section */
         .preview-section {
-            margin: 100px 0;
             text-align: center;
         }
 
         .preview-mockup {
-            background: #1a1a1a;
+            background: #111;
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 40px;
             max-width: 800px;
-            margin: 40px auto;
+            margin: 0 auto;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
             text-align: left;
             overflow: hidden;
         }
 
-        /* Abstract Email representation */
         .email-header {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 24px;
+            margin-bottom: 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        .email-logo { font-family: 'Space Grotesk'; font-weight: bold; color: var(--accent-color); }
-        .email-date { color: var(--text-muted); font-size: 12px; }
-
-        .email-content .line {
-            height: 12px;
-            background: #2a2a2a;
-            border-radius: 4px;
-            margin-bottom: 12px;
+        .email-logo { 
+            font-family: 'Space Grotesk'; 
+            font-weight: 700; 
+            color: #fff; 
+            font-size: 20px;
+            letter-spacing: -0.02em;
         }
-        
-        .email-content .line.short { width: 60%; }
-        .email-content .line.medium { width: 80%; }
-        
+
+        .email-date { color: var(--text-muted); font-size: 14px; }
+
+        .mockup-article {
+            margin-bottom: 32px;
+        }
+
+        .mockup-headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .mockup-body {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
         .highlight-box {
-            background: rgba(212, 168, 83, 0.05);
+            background: rgba(212, 168, 83, 0.08);
             border-left: 3px solid var(--accent-color);
-            padding: 16px;
-            margin: 24px 0;
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            color: #ddd;
         }
 
         /* Testimonial */
         .testimonial {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 100px;
+            max-width: 800px;
+            margin: 120px auto;
         }
 
         .quote {
-            font-size: 24px;
+            font-size: 32px;
             font-family: 'Space Grotesk';
             color: var(--text-main);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            line-height: 1.2;
         }
 
         .author {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .faq-item h4 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .faq-item p {
             color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 60px 24px;
+            text-align: center;
+            margin-bottom: 80px;
         }
 
         /* Footer */
         footer {
             border-top: 1px solid var(--border-color);
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
             color: var(--text-muted);
             font-size: 14px;
         }
 
         .cross-link {
+            display: inline-block;
+            margin-top: 16px;
             color: var(--text-main);
             text-decoration: none;
-            border-bottom: 1px solid var(--accent-color);
+            border-bottom: 1px solid rgba(212, 168, 83, 0.5);
             transition: all 0.2s;
+            padding-bottom: 2px;
         }
 
         .cross-link:hover {
             color: var(--accent-color);
+            border-color: var(--accent-color);
         }
 
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .signup-form { flex-direction: column; }
-            button.cta { width: 100%; padding: 16px; }
+            .hero h1 { 
+                font-size: 36px; 
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .signup-form { 
+                flex-direction: column; 
+            }
+            
+            button.cta { 
+                width: 100%; 
+            }
+
+            .audience-section {
+                padding: 60px 0;
+            }
+
+            .preview-mockup {
+                padding: 24px;
+            }
+
+            .mockup-headline {
+                font-size: 18px;
+            }
+            
+            .quote {
+                font-size: 24px;
+            }
+
+            section {
+                margin: 60px 0;
+            }
         }
     </style>
 </head>
@@ -309,82 +474,185 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="tag">Every Tuesday at 7am EST</div>
-            <h1>The MA Operator's <br/> Margin Report</h1>
-            <p>The only MA-specific briefing that helps you find 15% more margin in a crashing market.</p>
+            <h1>Stop flying blind.<br>Get the intel MA operators actually need.</h1>
+            <p>The weekly briefing that helps MA dispensaries protect their margins.</p>
             
             <form class="signup-form" onsubmit="event.preventDefault(); document.getElementById('success').style.display='block';">
                 <div class="input-group">
-                    <input type="email" placeholder="Enter your email" required>
+                    <input type="email" placeholder="Enter your email address" required>
                 </div>
                 <button type="submit" class="cta">Subscribe Free</button>
             </form>
             
             <div class="social-proof">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-color)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                Join <span>150+ Massachusetts</span> cannabis operators
+                <div style="display:flex; align-items:center; gap:4px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-color)"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    Join <span>150+ MA operators</span>
+                </div>
             </div>
-            <div id="success" style="display:none; color: var(--accent-color); margin-top: 10px; font-size: 14px;">Welcome to the inner circle.</div>
+            <div id="success" style="display:none; color: var(--accent-color); margin-top: 16px; font-weight: 500;">Welcome to the inner circle.</div>
         </section>
 
-        <!-- Features Grid -->
-        <section class="features">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <h3>Regulatory Radar</h3>
-                <p>CCC regulatory updates and local violation alerts before they hit the masses.</p>
+        <!-- What's Inside Section -->
+        <section id="features">
+            <div class="section-header">
+                <h2>What's Inside Every Issue</h2>
+                <p>No fluff. Just the data you need to make better decisions.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <div class="feature-grid">
+                <!-- 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>CCC Watchlist</h3>
+                    <p>Regulatory changes and agenda items before they hit the mainstream news cycle.</p>
                 </div>
-                <h3>Pricing Intelligence</h3>
-                <p>Competitor pricing movements and margin protection strategies.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <!-- 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <h3>Price Index</h3>
+                    <p>Wholesale and retail pricing benchmarks for your region. Know if you're overpaying.</p>
                 </div>
-                <h3>Weekly Pulse</h3>
-                <p>A concise market pulse to keep you ahead of the crash.</p>
+                <!-- 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    </div>
+                    <h3>Violation Alerts</h3>
+                    <p>Breakdowns of who got cited this week and exactly why—so you don't make the same mistake.</p>
+                </div>
+                <!-- 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    </div>
+                    <h3>Margin Tactics</h3>
+                    <p>Actionable operational adjustments to protect your bottom line in a compressing market.</p>
+                </div>
+                <!-- 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <h3>Federal Watch</h3>
+                    <p>DC moves that could change everything, filtered for relevance to MA operators.</p>
+                </div>
             </div>
         </section>
+    </div>
 
-        <!-- Preview Section -->
+    <!-- Who This Is For Section -->
+    <div class="audience-section">
+        <div class="audience-container">
+            <div class="section-header">
+                <h2>Who This Is For</h2>
+            </div>
+            <div class="audience-grid">
+                <div class="audience-item">
+                    <h4>Dispensary Owners</h4>
+                    <p>Tired of margin erosion and looking for strategic advantages.</p>
+                </div>
+                <div class="audience-item">
+                    <h4>General Managers</h4>
+                    <p>Running day-to-day ops who need to stay compliant and efficient.</p>
+                </div>
+                <div class="audience-item">
+                    <h4>Inventory Buyers</h4>
+                    <p>Negotiating with vendors who need real pricing data leverage.</p>
+                </div>
+                <div class="audience-item">
+                    <h4>Decision Makers</h4>
+                    <p>Anyone making high-stakes decisions at a MA cannabis retailer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Sample Preview Section -->
         <section class="preview-section">
-            <h2 style="margin-bottom: 20px;">Read in 3 minutes or less.</h2>
+            <div class="section-header">
+                <h2>A Peek Inside</h2>
+                <p>Join the 150+ operators who start their Tuesday with us.</p>
+            </div>
+            
             <div class="preview-mockup">
                 <div class="email-header">
                     <span class="email-logo">OPERATOR</span>
-                    <span class="email-date">Tuesday, Oct 24</span>
+                    <span class="email-date">Tuesday, October 24</span>
                 </div>
-                <div class="email-content">
-                    <h3 style="color: white; margin-bottom: 15px; font-size: 20px;">The Wholesale Crash of '25</h3>
-                    <div class="line medium"></div>
-                    <div class="line"></div>
-                    <div class="line short"></div>
-                    
-                    <div class="highlight-box">
-                        <strong style="color: var(--accent-color)">CCC Alert:</strong> New packaging regulations proposed for edibles effectively ban neon colors starting Q3.
+                
+                <div class="mockup-article">
+                    <div class="mockup-headline">CCC delays delivery license renewals — here's what it means for you</div>
+                    <div class="mockup-body">
+                        The Cannabis Control Commission quietly pushed the renewal deadline for delivery operator licenses this morning. While this seems minor, it signals a larger backlog in the licensing queue...
                     </div>
-                    
-                    <div class="line"></div>
-                    <div class="line medium"></div>
+                </div>
+
+                <div class="mockup-article">
+                    <div class="mockup-headline">3 dispensaries in Worcester got cited this week. Common thread: Security Footage</div>
+                    <div class="mockup-body">
+                        Inspectors are cracking down on 935 CMR 500.110(5). Specifically, the 90-day retention requirement for limited access areas.
+                    </div>
+                    <div class="highlight-box">
+                        <strong style="color: var(--accent-color)">Violation Alert:</strong> Ensure your NVRs are actually recording 24/7. One operator was fined $5k for a 2-hour gap.
+                    </div>
+                </div>
+
+                <div class="mockup-article">
+                    <div class="mockup-headline">Price check: Flower averages $28/g in Boston, $22/g in Western MA</div>
+                    <div class="mockup-body">
+                        We're seeing a significant divergence in pricing between the eastern and western zones. If you're buying bulk in the west, target $1,200/lb for A-grade...
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonial -->
+        <!-- Testimonial Section -->
         <section class="testimonial">
-            <div class="quote">"The only email I actually open on Tuesdays. It's saved us thousands in avoided compliance fines."</div>
-            <div class="author">— Sarah J., Dispensary GM in Worcester</div>
+            <div class="quote">"Finally, someone who actually understands the MA market."</div>
+            <div class="author">— Dispensary Owner, Worcester</div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How often does it come out?</h4>
+                    <p>Every single Tuesday at 7am EST. Perfect for your morning commute or coffee.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is it free?</h4>
+                    <p>Yes, 100% free. We are supported by our premium market intelligence platform, not by selling your data.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I unsubscribe?</h4>
+                    <p>Anytime. One click in the footer of every email. No hard feelings.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <h2 style="margin-bottom: 24px;">Protect your margins. Stay compliant.</h2>
+            <form class="signup-form" onsubmit="event.preventDefault(); document.getElementById('success-2').style.display='block';">
+                <div class="input-group">
+                    <input type="email" placeholder="Enter your email address" required>
+                </div>
+                <button type="submit" class="cta">Subscribe Free</button>
+            </form>
+            <div id="success-2" style="display:none; color: var(--accent-color); margin-top: 10px;">You're on the list.</div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>By Roviq. Built for the Massachusetts Market.</p>
-            <br>
+            <p>&copy; 2024 Operator. All rights reserved.</p>
             <a href="#" class="cross-link">Are you a vendor? Check out our Vendor Briefing &rarr;</a>
         </footer>
     </div>
