@@ -3,885 +3,403 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The MA Market Intel Brief | Vendor Intelligence for Massachusetts Cannabis</title>
-    <meta name="description" content="See which MA dispensaries are growing, stalling, or dying—before your competitors do. Bi-weekly market intel for cannabis brands and wholesalers.">
-    
-    <!-- Fonts -->
+    <title>The MA Market Intel Brief | Vendor Intelligence</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ============================================
-           ANTI-AI DESIGN: Human, Editorial, Warm
-           ============================================ */
-        
         :root {
-            /* Grounded Urgency Palette */
-            --paper: #F5F2EA;
-            --stone: #E3E0D6;
-            --ink: #1A1917;
-            --ember: #D94F3D;
-            --growth: #2d5a4a; /* Deep Teal/Green for Vendor/Growth */
-            --oxide: #4A5D4E;
-            --cream: #FAF8F3;
-            --bay-blue: #1E4D6B;
-            
-            /* Typography */
+            --bg-color: #faf9f6;
+            --surface-color: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --accent-color: #1a5f4a;
+            --accent-hover: #144a39;
+            --border-color: #e0e0e0;
             --font-heading: 'Space Grotesk', sans-serif;
             --font-body: 'Inter', sans-serif;
-            --font-handwritten: 'Gloria Hallelujah', cursive;
-            
-            /* Spacing (8pt grid) */
-            --space-xs: 8px;
-            --space-sm: 16px;
-            --space-md: 24px;
-            --space-lg: 48px;
-            --space-xl: 80px;
-            --space-2xl: 120px;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
+
         body {
             font-family: var(--font-body);
-            background-color: var(--paper);
-            color: var(--ink);
+            background-color: var(--bg-color);
+            color: var(--text-main);
             line-height: 1.6;
-            position: relative;
-            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            /* Subtle texture */
+            background-image: radial-gradient(#e5e5e5 1px, transparent 1px);
+            background-size: 20px 20px;
         }
-        
-        /* Film grain overlay - 5% opacity for subtle texture */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.04;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-        
-        /* Container */
+
         .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 var(--space-md);
-        }
-        
-        /* ============================================
-           HEADER - Minimal, Editorial
-           ============================================ */
-        header {
-            padding: var(--space-md) 0;
-            border-bottom: 1px solid rgba(26, 25, 23, 0.1);
-        }
-        
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            color: var(--ink);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--growth);
-        }
-        
-        .ma-badge {
-            font-family: var(--font-heading);
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--growth);
-            background: rgba(45, 90, 74, 0.1);
-            padding: 4px 10px;
-            border-radius: 100px;
-            margin-left: var(--space-sm);
-        }
-        
-        /* ============================================
-           HERO - Asymmetric, Editorial Feel
-           ============================================ */
-        .hero {
-            padding: var(--space-xl) 0 var(--space-2xl);
-            position: relative;
-        }
-        
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 380px;
-            gap: var(--space-lg);
-            align-items: start;
-        }
-        
-        .hero-content {
-            padding-top: var(--space-lg);
-        }
-        
-        .kicker {
-            font-family: var(--font-handwritten);
-            color: var(--growth);
-            font-size: 1.1rem;
-            margin-bottom: var(--space-sm);
-            display: inline-block;
-            transform: rotate(-1.5deg);
-        }
-        
-        .kicker::before {
-            content: '→ ';
-        }
-        
-        h1 {
-            font-family: var(--font-heading);
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
-            font-weight: 700;
-            line-height: 1.08;
-            letter-spacing: -0.03em;
-            margin-bottom: var(--space-md);
-            color: var(--ink);
-        }
-        
-        h1 .highlight {
-            color: var(--growth);
-            position: relative;
-        }
-        
-        /* Hand-drawn underline effect */
-        h1 .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            left: 0;
-            right: 0;
-            height: 8px;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5.5C20 2.5 40 6 60 4C80 2 99 5 99 5' stroke='%232d5a4a' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
-            background-size: 100px 8px;
-            opacity: 0.4;
-        }
-        
-        .tagline {
-            font-size: 1.35rem;
-            color: rgba(26, 25, 23, 0.7);
-            margin-bottom: var(--space-lg);
-            max-width: 480px;
-            line-height: 1.5;
-        }
-        
-        .tagline strong {
-            color: var(--ink);
-            font-weight: 600;
-        }
-        
-        /* Preview callout - hand-annotated feel */
-        .preview-callout {
-            background: var(--cream);
-            border: 1px solid rgba(26, 25, 23, 0.08);
-            border-radius: 12px;
-            padding: var(--space-md);
-            margin-bottom: var(--space-lg);
-            position: relative;
-            max-width: 420px;
-        }
-        
-        .preview-callout::before {
-            content: 'this week →';
-            font-family: var(--font-handwritten);
-            position: absolute;
-            top: -28px;
-            left: 20px;
-            color: var(--growth);
-            font-size: 0.9rem;
-            transform: rotate(-3deg);
-        }
-        
-        .preview-item {
-            font-size: 0.95rem;
-            padding: 8px 0;
-            padding-left: 28px;
-            position: relative;
-            color: var(--ink);
-            border-bottom: 1px solid rgba(26, 25, 23, 0.06);
-        }
-        
-        .preview-item:last-child {
-            border-bottom: none;
-        }
-        
-        .preview-item::before {
-            position: absolute;
-            left: 0;
-            font-size: 1.1rem;
-        }
-        
-        .preview-item.license::before { content: '🏗️'; }
-        .preview-item.distress::before { content: '📉'; }
-        .preview-item.price::before { content: '💵'; }
-        
-        /* CTA Buttons */
-        .cta-group {
-            display: flex;
-            gap: var(--space-sm);
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-            background: var(--growth);
-            color: white;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 16px 32px;
-            border-radius: 100px;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(45, 90, 74, 0.25);
-        }
-        
-        .btn-secondary {
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            color: rgba(26, 25, 23, 0.6);
-            text-decoration: none;
-            padding: var(--space-sm);
-        }
-        
-        .btn-secondary:hover {
-            color: var(--ink);
-        }
-        
-        /* Hero Card - Signup Form */
-        .hero-card {
-            background: var(--cream);
-            border: 1px solid rgba(26, 25, 23, 0.08);
-            border-radius: 12px;
-            padding: var(--space-lg);
-            position: relative;
-        }
-        
-        .hero-card::after {
-            content: 'Vendor Edition';
-            font-family: var(--font-handwritten);
-            position: absolute;
-            top: -16px;
-            right: 30px;
-            background: var(--bay-blue);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 100px;
-            font-size: 0.85rem;
-            transform: rotate(4deg);
-        }
-        
-        .card-title {
-            font-family: var(--font-heading);
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: var(--space-xs);
-        }
-        
-        .card-subtitle {
-            color: rgba(26, 25, 23, 0.6);
-            font-size: 0.95rem;
-            margin-bottom: var(--space-md);
-        }
-        
-        .form-group {
-            margin-bottom: var(--space-sm);
-        }
-        
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 6px;
-            color: rgba(26, 25, 23, 0.7);
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 14px 16px;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            border: 1px solid rgba(26, 25, 23, 0.15);
-            border-radius: 8px;
-            background: white;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--growth);
-            box-shadow: 0 0 0 3px rgba(45, 90, 74, 0.1);
-        }
-        
-        .form-submit {
-            width: 100%;
-            margin-top: var(--space-sm);
-        }
-        
-        .privacy-note {
-            font-size: 0.8rem;
-            color: rgba(26, 25, 23, 0.5);
-            margin-top: var(--space-sm);
-            text-align: center;
-        }
-        
-        /* The Problem Section */
-        .problem-section {
-            padding: var(--space-xl) 0;
-            background: var(--stone);
-            position: relative;
-        }
-        
-        .problem-content {
             max-width: 800px;
             margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Utility */
+        .text-accent { color: var(--accent-color); }
+        .text-center { text-align: center; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .gap-4 { gap: 1rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mb-4 { margin-bottom: 1rem; }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        h2 { font-size: 2rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+        p { font-size: 1.125rem; color: var(--text-muted); }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 0 3rem;
             text-align: center;
         }
-        
-        .problem-kicker {
-            font-family: var(--font-handwritten);
-            color: var(--growth);
-            font-size: 1.1rem;
-            margin-bottom: var(--space-sm);
+
+        .tag {
             display: inline-block;
-            transform: rotate(-1.5deg);
-        }
-        
-        .problem-content h2 {
+            background-color: rgba(26, 95, 74, 0.1);
+            color: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
             font-family: var(--font-heading);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            margin-bottom: var(--space-md);
-            line-height: 1.1;
         }
-        
-        .problem-content p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: rgba(26, 25, 23, 0.8);
-            margin-bottom: var(--space-md);
+
+        /* Signup Form */
+        .signup-form {
+            max-width: 480px;
+            margin: 2rem auto;
+            display: flex;
+            gap: 8px;
         }
-        
-        /* What's Inside */
-        .inside-section {
-            padding: var(--space-2xl) 0;
-        }
-        
-        .section-header {
-            max-width: 600px;
-            margin-bottom: var(--space-xl);
-        }
-        
-        .section-kicker {
-            font-family: var(--font-handwritten);
-            color: var(--growth);
+
+        input[type="email"] {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #d1d1d1;
+            border-radius: 8px;
             font-size: 1rem;
-            margin-bottom: var(--space-sm);
-            display: block;
+            outline: none;
+            transition: border-color 0.2s;
+            font-family: var(--font-body);
         }
-        
-        .section-header h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(1.8rem, 3vw, 2.4rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: var(--space-sm);
+
+        input[type="email"]:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(26, 95, 74, 0.1);
         }
-        
-        .inside-grid {
+
+        .btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background-color: transparent;
+        }
+
+        .social-proof {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1rem;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Features */
+        .features {
+            padding: 4rem 0;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md);
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
         }
-        
-        .inside-card {
-            background: var(--cream);
-            border: 1px solid rgba(26, 25, 23, 0.06);
+
+        .feature-item {
+            padding: 1.5rem;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: var(--space-lg);
-            position: relative;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
             transition: transform 0.2s;
         }
         
-        .inside-card:hover {
-            transform: translateY(-4px);
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.04);
         }
-        
-        .inside-icon {
-            font-size: 2rem;
-            margin-bottom: var(--space-sm);
-        }
-        
-        .inside-card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: var(--space-xs);
-            color: var(--ink);
-        }
-        
-        .inside-card p {
-            font-size: 0.95rem;
-            color: rgba(26, 25, 23, 0.65);
-            line-height: 1.55;
-        }
-        
-        /* Sample Preview */
-        .sample-section {
-            padding: var(--space-xl) 0 var(--space-2xl);
-            background: var(--paper);
-            border-top: 1px solid rgba(26, 25, 23, 0.08);
-        }
-        
-        .sample-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-lg);
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(26, 95, 74, 0.1);
+            color: var(--accent-color);
+            border-radius: 8px;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
         }
-        
-        .sample-content h2 {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: var(--space-md);
+
+        /* Data Preview */
+        .preview-section {
+            padding: 3rem 0;
+            text-align: center;
         }
-        
-        .sample-preview-card {
-            background: white;
-            border: 1px solid rgba(26, 25, 23, 0.1);
+
+        .preview-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: var(--space-lg);
-            position: relative;
-            box-shadow: 0 12px 36px rgba(0,0,0,0.04);
-        }
-        
-        .sample-section-item {
-            padding: var(--space-sm) 0;
-            border-bottom: 1px solid rgba(26, 25, 23, 0.06);
-        }
-        
-        .sample-section-item:last-child {
-            border-bottom: none;
-        }
-        
-        .sample-section-title {
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 4px;
-            color: var(--ink);
-        }
-        
-        .sample-section-desc {
-            font-size: 0.9rem;
-            color: rgba(26, 25, 23, 0.6);
-        }
-        
-        /* Audience Section */
-        .audience-section {
-            padding: var(--space-xl) 0;
-            background: var(--cream);
-            border-top: 1px solid rgba(26, 25, 23, 0.08);
-        }
-        
-        .audience-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-        
-        .audience-item {
-            text-align: center;
-        }
-        
-        .audience-icon {
-            font-size: 2rem;
-            margin-bottom: var(--space-sm);
-            display: inline-block;
-        }
-        
-        .audience-title {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        
-        /* Intel Pack CTA */
-        .intel-cta-section {
-            padding: var(--space-2xl) 0;
-            background: var(--ink);
-            color: var(--paper);
-            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+            margin: 2rem auto;
+            max-width: 600px;
+            text-align: left;
             position: relative;
             overflow: hidden;
         }
-        
-        .intel-cta-section h2 {
-            color: var(--paper);
-            font-family: var(--font-heading);
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: var(--space-md);
-        }
-        
-        .intel-cta-section p {
-            color: rgba(245, 242, 234, 0.8);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto var(--space-lg);
-        }
-        
-        .intel-btn {
-            background: var(--growth);
-            color: white;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 18px 40px;
-            border-radius: 100px;
-            text-decoration: none;
-            display: inline-block;
-            transition: transform 0.2s;
-        }
-        
-        .intel-btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        .intel-price {
-            display: block;
-            margin-top: var(--space-sm);
-            font-family: var(--font-handwritten);
-            color: rgba(245, 242, 234, 0.6);
-            font-size: 0.9rem;
-        }
-        
-        /* Cross Link Section */
-        .cross-link-section {
-            padding: var(--space-lg) 0;
-            text-align: center;
-            background: var(--paper); /* Keep it seamless or slightly distinct? User said '---' */
-            border-top: 1px dashed rgba(26, 25, 23, 0.2);
-        }
-        
-        .cross-link-content {
-            font-size: 1.05rem;
-            color: var(--ink);
-            font-family: var(--font-heading);
-        }
-        
-        .cross-link-content a {
-            color: var(--growth);
-            font-weight: 700;
-            text-decoration: none;
-            border-bottom: 2px solid rgba(45, 90, 74, 0.3);
-            transition: border-color 0.2s;
-        }
-        
-        .cross-link-content a:hover {
-            border-bottom-color: var(--growth);
-        }
-        
-        /* Footer */
-        footer {
-            padding: var(--space-lg) 0;
-            border-top: 1px solid rgba(26, 25, 23, 0.08);
-            background: var(--paper);
-        }
-        
-        .footer-inner {
+
+        .preview-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .preview-badge {
+            background: #ffe4e6;
+            color: #be123c;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 100px;
+            font-weight: 600;
         }
         
-        .footer-copy {
-            font-size: 0.85rem;
-            color: rgba(26, 25, 23, 0.5);
+        .preview-badge.growth {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 0.9rem;
+        }
+        .data-row:last-child { border-bottom: none; }
+        .blur-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 1rem;
+        }
+
+        /* Upsell */
+        .upsell-section {
+            background-color: #f1f0ec; /* Slightly darker than bg */
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            text-align: center;
+            border: 1px solid #e5e5e5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
         }
         
-        /* Responsive */
-        @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-card {
-                max-width: 440px;
-            }
-            .inside-grid, .audience-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .sample-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
+        /* Mobile */
         @media (max-width: 600px) {
-            .header-inner {
-                flex-direction: column;
-                gap: var(--space-xs);
-            }
-            .inside-grid, .audience-grid {
-                grid-template-columns: 1fr;
-            }
-            .preview-callout::before {
-                display: none;
-            }
+            h1 { font-size: 2.25rem; }
+            .signup-form { flex-direction: column; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-inner">
-                <a href="#" class="logo">The MA <span>Market Intel Brief</span> <span class="ma-badge">Vendor Edition</span></a>
-                <span class="logo" style="font-size: 0.85rem; color: var(--oxide); font-weight: 400;">by Roviq</span>
-            </div>
-        </div>
-    </header>
-    
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <span class="kicker">Stop pitching blind</span>
-                    
-                    <h1>See which MA dispensaries are <span class="highlight">growing, stalling, or dying.</span></h1>
-                    
-                    <p class="tagline">
-                        Bi-weekly market intel for <strong>cannabis brands and wholesalers</strong>. Know who to call before your competitors do.
-                    </p>
-                    
-                    <div class="preview-callout">
-                        <div class="preview-item license"><strong>3 New Licenses</strong> — Opening soon in Western Mass.</div>
-                        <div class="preview-item distress"><strong>Distress Signals</strong> — Top 10 operators struggling this month.</div>
-                        <div class="preview-item price"><strong>Pricing Trends</strong> — Flower prices dropping in Worcester county.</div>
-                    </div>
-                    
-                    <div class="cta-group">
-                        <a href="#signup" class="btn-primary">
-                            Get the briefing →
-                        </a>
-                        <a href="#intel-pack" class="btn-secondary">Looking for the full dataset?</a>
-                    </div>
-                </div>
-                
-                <div class="hero-card" id="signup">
-                    <h3 class="card-title">Join The Brief</h3>
-                    <p class="card-subtitle">Bi-weekly vendor intel. Free updates.</p>
-                    
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <label for="name">Your name</label>
-                            <input type="text" id="name" name="name" placeholder="Alex" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Work email</label>
-                            <input type="email" id="email" name="email" placeholder="alex@brand.com" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company">Company</label>
-                            <input type="text" id="company" name="company" placeholder="Brand / Wholesaler">
-                        </div>
-                        
-                        <button type="submit" class="btn-primary form-submit">
-                            Send me the brief
-                        </button>
-                        
-                        <p class="privacy-note">Data-driven intel. No fluff.</p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- The Problem -->
-    <section class="problem-section">
-        <div class="container">
-            <div class="problem-content">
-                <span class="problem-kicker">the blind spot</span>
-                <h2>There are 300+ dispensaries in Massachusetts. Which ones should you call?</h2>
-                <p>
-                    Most sales teams are pitching blind. You call the same list as everyone else. You don't know who just got licensed, who's running out of cash, or who desperately needs new product on their shelves.
-                </p>
-                <p>
-                    <strong>Your competitors have data. Do you?</strong>
-                </p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- What You Get -->
-    <section class="inside-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-kicker">inside every issue</span>
-                <h2>What You'll Get</h2>
-                <p>Actionable intelligence to drive your sales strategy.</p>
-            </div>
-            
-            <div class="inside-grid">
-                <div class="inside-card">
-                    <div class="inside-icon">🏗️</div>
-                    <h3>New License Alerts</h3>
-                    <p>Be the first to know who just got their final license. Pitch them before their shelves are full.</p>
-                </div>
-                
-                <div class="inside-card">
-                    <div class="inside-icon">📉</div>
-                    <h3>Distress Signals</h3>
-                    <p>Identify operators who are struggling. They need better margins and new products to survive. That's your entry point.</p>
-                </div>
-                
-                <div class="inside-card">
-                    <div class="inside-icon">👥</div>
-                    <h3>Buyer Contact Intel</h3>
-                    <p>Know who actually makes the decisions. Stop wasting time with gatekeepers.</p>
-                </div>
-                
-                <div class="inside-card">
-                    <div class="inside-icon">⚔️</div>
-                    <h3>Competitive Landscape</h3>
-                    <p>Track shifts in shelf space. See which brands are losing ground and where opportunities are opening up.</p>
-                </div>
-                
-                <div class="inside-card">
-                    <div class="inside-icon">💵</div>
-                    <h3>Pricing Trend Data</h3>
-                    <p>Real-time data on wholesale and retail pricing trends across the state.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Sample Preview -->
-    <section class="sample-section">
-        <div class="container">
-            <div class="sample-grid">
-                <div class="sample-content">
-                    <span class="section-kicker">sneak peek</span>
-                    <h2>Real intel, not just news.</h2>
-                    <p>
-                        See what a typical vendor briefing looks like. We dig through the data so you don't have to.
-                    </p>
-                </div>
-                
-                <div class="sample-preview-card">
-                    <div class="sample-section-item">
-                        <div class="sample-section-title">📍 New Openings</div>
-                        <div class="sample-section-desc">3 new licenses in Western Mass approved this week. (Map & contacts included).</div>
-                    </div>
-                    <div class="sample-section-item">
-                        <div class="sample-section-title">⚠️ Distress Watch</div>
-                        <div class="sample-section-desc">Top 10 distressed operators this month based on payment delays and inventory stagnation.</div>
-                    </div>
-                    <div class="sample-section-item">
-                        <div class="sample-section-title">📊 Market Shift</div>
-                        <div class="sample-section-desc">Edible pricing in Boston Metro dropped 5% last month. Here's why.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Who This Is For -->
-    <section class="audience-section">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin: 0 auto; max-width: 100%;">
-                <h2>Who This Is For</h2>
-            </div>
-            
-            <div class="audience-grid">
-                <div class="audience-item">
-                    <span class="audience-icon">🏷️</span>
-                    <h3 class="audience-title">Brands</h3>
-                    <p>Find new shelf space.</p>
-                </div>
-                <div class="audience-item">
-                    <span class="audience-icon">🌱</span>
-                    <h3 class="audience-title">Cultivators</h3>
-                    <p>Locate retail partners.</p>
-                </div>
-                <div class="audience-item">
-                    <span class="audience-icon">🏭</span>
-                    <h3 class="audience-title">Manufacturers</h3>
-                    <p>Seek distribution channels.</p>
-                </div>
-                <div class="audience-item">
-                    <span class="audience-icon">🔧</span>
-                    <h3 class="audience-title">Service Providers</h3>
-                    <p>HVAC, security, compliance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Intel Pack CTA -->
-    <section class="intel-cta-section" id="intel-pack">
-        <div class="container">
-            <h2>Want the full data?</h2>
-            <p>Get the <strong>Intel Pack</strong>. Access to 150+ operators with direct contact info, distress scores, and menu gap analysis.</p>
-            
-            <a href="#" class="intel-btn">Get the Intel Pack</a>
-            <span class="intel-price">$500 / one-time purchase</span>
-        </div>
-    </section>
-    
-    <!-- Cross Link -->
-    <section class="cross-link-section">
-        <div class="container">
-            <p class="cross-link-content">
-                Are you a dispensary operator looking to protect your margins?<br>
-                <span style="display: inline-block; margin-top: 8px;">→ <a href="index.html">Check out The MA Operator's Margin Report</a></span>
-            </p>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-inner">
-                <p class="footer-copy">© 2026 Roviq. Data-driven cannabis market intelligence.</p>
-                <p class="footer-copy">The MA Market Intel Brief</p>
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <span class="tag">Bi-Weekly Market Intelligence</span>
+            <h1>See which MA dispensaries are <br>growing, stalling, or dying.</h1>
+            <p>Before your competitors do. Get actionable intel on Massachusetts cannabis operators delivered to your inbox every other Thursday.</p>
+
+            <form class="signup-form">
+                <input type="email" placeholder="Enter your work email" required>
+                <button type="submit" class="btn">Subscribe for Free</button>
+            </form>
+            
+            <div class="social-proof">
+                <span class="dot"></span>
+                <span>Trusted by 50+ cannabis brands. Data on 150+ operators.</span>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="features">
+            <div class="feature-item">
+                <div class="icon">🚀</div>
+                <h3>New License Alerts</h3>
+                <p style="font-size: 0.95rem;">Be the first to know who just opened. Pitch your product before the shelves are full.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">📉</div>
+                <h3>Distress Signals</h3>
+                <p style="font-size: 0.95rem;">Identify struggling operators. Spot acquisition targets or credit risks early.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">🤝</div>
+                <h3>Buyer Intel</h3>
+                <p style="font-size: 0.95rem;">Get contact info and buyer preferences for top dispensaries in the state.</p>
+            </div>
+        </section>
+
+        <!-- Data Preview -->
+        <section class="preview-section">
+            <h2 style="font-size: 1.5rem;">What's inside?</h2>
+            <p>A peek at the data you'll get in every issue.</p>
+            
+            <div class="preview-card">
+                <div class="preview-header">
+                    <span style="font-weight: 700; font-family: var(--font-heading);">Recent Movements</span>
+                    <span style="font-size: 0.85rem; color: #888;">Oct 12 - Oct 26</span>
+                </div>
+                
+                <div class="data-row">
+                    <div>
+                        <div style="font-weight: 600;">Green Harbor - location #3</div>
+                        <div style="font-size: 0.8rem; color: #666;">Boston, MA</div>
+                    </div>
+                    <span class="preview-badge growth">New Open</span>
+                </div>
+
+                <div class="data-row">
+                    <div>
+                        <div style="font-weight: 600;">Elevated Roots</div>
+                        <div style="font-size: 0.8rem; color: #666;">Kingston, MA</div>
+                    </div>
+                    <span class="preview-badge" style="background:#f3f4f6; color:#4b5563;">Expansion Planned</span>
+                </div>
+
+                <div class="data-row">
+                    <div>
+                        <div style="font-weight: 600;">CannaCorner</div>
+                        <div style="font-size: 0.8rem; color: #666;">Worcester, MA</div>
+                    </div>
+                    <span class="preview-badge">License Suspended</span>
+                </div>
+                
+                <div class="data-row" style="opacity: 0.5;">
+                    <div>
+                        <div style="font-weight: 600;">Mystic River Cannabis</div>
+                        <div style="font-size: 0.8rem; color: #666;">Medford, MA</div>
+                    </div>
+                    <span class="preview-badge growth">Hiring Spree</span>
+                </div>
+
+                <div class="blur-bottom">
+                    <!-- <span style="font-size: 0.8rem; color: #888; background: white; padding: 4px 12px; border-radius: 100px; border: 1px solid #eee;">+ 12 more updates</span> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Upsell -->
+        <section class="upsell-section">
+            <h2 style="font-size: 1.75rem;">Need the raw data?</h2>
+            <p style="margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                Get the full CSV export of all 150+ MA operators, including buyer contacts, license status, and monthly sales estimates.
+            </p>
+            <div class="flex items-center justify-center gap-4" style="flex-wrap: wrap;">
+                <button class="btn">Get the Intel Pack ($500)</button>
+                <button class="btn btn-outline" style="border: 1px solid #aaa;">View Sample Data</button>
+            </div>
+        </section>
+
+        <!-- Cross Link & Footer -->
+        <footer>
+            <div style="margin-bottom: 2rem;">
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Are you a dispensary operator?</p>
+                <a href="#" style="text-decoration: underline; color: var(--accent-color);">Check out our Operator Optimization Newsletter &rarr;</a>
+            </div>
+            
+            <p>&copy; 2024 Roviq. All rights reserved.</p>
+        </footer>
+
+    </div>
 </body>
 </html>
