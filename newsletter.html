@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Operator's Margin Report | The numbers they won't tell you</title>
-    <meta name="description" content="Weekly intel for MA dispensary operators. Real margin data, wholesale trends, and the numbers that actually matter. No fluff, just signal.">
+    <title>The Dispensary Playbook | Your Weekly Operations PA</title>
+    <meta name="description" content="Weekly prep for dispensary owners and budtenders. Know what to prep, what's selling, and how to handle every customer. Get ops-focused intel delivered every week.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -186,8 +186,25 @@
             font-weight: 600;
         }
         
-        /* Stats callout - hand-annotated feel */
-        .stat-callout {
+        /* Audience tags */
+        .audience-tags {
+            display: flex;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            flex-wrap: wrap;
+        }
+        
+        .audience-tag {
+            font-family: var(--font-handwritten);
+            font-size: 0.95rem;
+            color: var(--oxide);
+            background: rgba(74, 93, 78, 0.08);
+            padding: 8px 16px;
+            border-radius: 100px;
+        }
+        
+        /* Preview callout - hand-annotated feel */
+        .preview-callout {
             background: var(--cream);
             border: 1px solid rgba(26, 25, 23, 0.08);
             border-radius: 12px;
@@ -197,8 +214,8 @@
             max-width: 420px;
         }
         
-        .stat-callout::before {
-            content: 'look at this ↓';
+        .preview-callout::before {
+            content: 'this week →';
             font-family: var(--font-handwritten);
             position: absolute;
             top: -28px;
@@ -208,23 +225,28 @@
             transform: rotate(-3deg);
         }
         
-        .stat-number {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--ember);
-            line-height: 1;
-            margin-bottom: var(--space-xs);
-        }
-        
-        .stat-label {
+        .preview-item {
             font-size: 0.95rem;
-            color: rgba(26, 25, 23, 0.7);
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            color: var(--ink);
+            border-bottom: 1px solid rgba(26, 25, 23, 0.06);
         }
         
-        .stat-label strong {
-            color: var(--ink);
+        .preview-item:last-child {
+            border-bottom: none;
         }
+        
+        .preview-item::before {
+            position: absolute;
+            left: 0;
+            font-size: 1.1rem;
+        }
+        
+        .preview-item.prep::before { content: '📅'; }
+        .preview-item.selling::before { content: '🔥'; }
+        .preview-item.scripts::before { content: '💬'; }
         
         /* CTA Buttons */
         .cta-group {
@@ -532,14 +554,17 @@
             transform: translateY(16px);
         }
         
-        .inside-number {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            font-weight: 700;
-            color: rgba(26, 25, 23, 0.08);
-            position: absolute;
-            top: var(--space-sm);
-            right: var(--space-md);
+        .inside-card:nth-child(5) {
+            transform: translateY(20px);
+        }
+        
+        .inside-card:nth-child(5):hover {
+            transform: translateY(16px);
+        }
+        
+        .inside-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-sm);
         }
         
         .inside-card h3 {
@@ -565,11 +590,99 @@
         }
         
         /* ============================================
+           SAMPLE PREVIEW - Editorial Card
+           ============================================ */
+        .sample-section {
+            padding: var(--space-xl) 0 var(--space-2xl);
+            background: var(--stone);
+        }
+        
+        .sample-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+        }
+        
+        .sample-content h2 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+        }
+        
+        .sample-content p {
+            font-size: 1.05rem;
+            color: rgba(26, 25, 23, 0.75);
+            margin-bottom: var(--space-md);
+            line-height: 1.65;
+        }
+        
+        .sample-preview-card {
+            background: var(--paper);
+            border: 1px solid rgba(26, 25, 23, 0.08);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            position: relative;
+        }
+        
+        .sample-preview-card::before {
+            content: 'example issue';
+            font-family: var(--font-handwritten);
+            position: absolute;
+            top: -14px;
+            left: 20px;
+            background: var(--ember);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            transform: rotate(-2deg);
+        }
+        
+        .sample-header {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--ember);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .sample-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: var(--ink);
+        }
+        
+        .sample-section-item {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(26, 25, 23, 0.06);
+        }
+        
+        .sample-section-item:last-child {
+            border-bottom: none;
+        }
+        
+        .sample-section-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            color: var(--ink);
+        }
+        
+        .sample-section-desc {
+            font-size: 0.9rem;
+            color: rgba(26, 25, 23, 0.6);
+        }
+        
+        /* ============================================
            ABOUT - Personal Touch
            ============================================ */
         .about-section {
             padding: var(--space-xl) 0 var(--space-2xl);
-            background: var(--stone);
         }
         
         .about-grid {
@@ -586,7 +699,7 @@
         .about-image-placeholder {
             width: 100%;
             aspect-ratio: 1;
-            background: var(--paper);
+            background: var(--cream);
             border-radius: 12px;
             border: 1px solid rgba(26, 25, 23, 0.08);
             display: flex;
@@ -597,7 +710,7 @@
         }
         
         .about-image::after {
-            content: 'the guy behind the numbers';
+            content: 'your weekly PA';
             font-family: var(--font-handwritten);
             position: absolute;
             bottom: -24px;
@@ -643,6 +756,7 @@
         .cta-section {
             padding: var(--space-2xl) 0;
             text-align: center;
+            background: var(--stone);
         }
         
         .cta-section h2 {
@@ -749,15 +863,18 @@
                 grid-template-columns: 1fr;
             }
             
-            .inside-card:nth-child(2) {
+            .inside-card:nth-child(2),
+            .inside-card:nth-child(5) {
                 transform: none;
             }
             
-            .inside-card:nth-child(2):hover {
+            .inside-card:nth-child(2):hover,
+            .inside-card:nth-child(5):hover {
                 transform: translateY(-4px);
             }
             
-            .about-grid {
+            .about-grid,
+            .sample-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -784,7 +901,7 @@
                 font-size: 2.2rem;
             }
             
-            .stat-callout::before {
+            .preview-callout::before {
                 display: none;
             }
             
@@ -801,7 +918,7 @@
     <header>
         <div class="container">
             <div class="header-inner">
-                <a href="#" class="logo">The Operator's <span>Margin</span> Report</a>
+                <a href="#" class="logo">The Dispensary <span>Playbook</span></a>
                 <span class="nav-hint">scroll down, it's worth it →</span>
             </div>
         </div>
@@ -812,33 +929,36 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <span class="kicker">for MA dispensary operators</span>
+                    <span class="kicker">your weekly dispensary PA</span>
                     
-                    <h1>The numbers<br>they <span class="highlight">won't tell you.</span></h1>
+                    <h1>Your Weekly<br>Dispensary <span class="highlight">Operations Playbook</span></h1>
                     
                     <p class="tagline">
-                        Weekly intel for dispensary operators who want to <strong>actually understand</strong> what's happening to their margins. Data, not drama.
+                        Know what to prep, what's selling, and <strong>how to handle every customer</strong>. Weekly ops intel for dispensary owners and budtenders.
                     </p>
                     
-                    <div class="stat-callout">
-                        <div class="stat-number">73%</div>
-                        <p class="stat-label">
-                            of wholesale prices have <strong>collapsed</strong> since 2022.<br>
-                            Most dispensary operators don't even know why.
-                        </p>
+                    <div class="audience-tags">
+                        <span class="audience-tag">for owners</span>
+                        <span class="audience-tag">for budtenders</span>
+                    </div>
+                    
+                    <div class="preview-callout">
+                        <div class="preview-item prep"><strong>Valentine's Day prep</strong> — 3 products to stock, 2 displays to build</div>
+                        <div class="preview-item selling"><strong>What's hot this week</strong> — infused pre-rolls moving 40% faster</div>
+                        <div class="preview-item scripts"><strong>Customer scenario</strong> — "What's the difference between these two?"</div>
                     </div>
                     
                     <div class="cta-group">
                         <a href="#signup" class="btn-primary">
-                            Get the free snapshot →
+                            Get the playbook →
                         </a>
                         <a href="#inside" class="btn-secondary">See what's inside</a>
                     </div>
                 </div>
                 
                 <div class="hero-card" id="signup">
-                    <h3 class="card-title">Margin Pressure Snapshot</h3>
-                    <p class="card-subtitle">See where your operation stands. Takes 2 minutes.</p>
+                    <h3 class="card-title">Join The Playbook</h3>
+                    <p class="card-subtitle">Free weekly ops intel. No spam, ever.</p>
                     
                     <form action="#" method="post">
                         <div class="form-group">
@@ -852,23 +972,24 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="store">Store name (optional)</label>
-                            <input type="text" id="store" name="store" placeholder="Green Valley Dispensary">
+                            <label for="role">I work as...</label>
+                            <input type="text" id="role" name="role" placeholder="Budtender / Owner / Manager">
                         </div>
                         
                         <button type="submit" class="btn-primary form-submit">
-                            Send me the snapshot
+                            Send me the playbook
                         </button>
                         
-                        <p class="privacy-note">No spam. Just the numbers. Unsubscribe anytime.</p>
+                        <p class="privacy-note">No spam. Just the good stuff. Unsubscribe anytime.</p>
                     </form>
                     
                     <div class="get-list">
-                        <p class="get-list-title">what you'll get:</p>
+                        <p class="get-list-title">every tuesday you'll get:</p>
                         <ul>
-                            <li>Your personalized margin pressure score</li>
-                            <li>Weekly Operator's Report (Tuesdays)</li>
-                            <li>Price intel before it's public</li>
+                            <li>This week's prep & holiday planning</li>
+                            <li>What's selling now & trend alerts</li>
+                            <li>Budtender scripts & customer tips</li>
+                            <li>Quick wins you can do in 30 min</li>
                         </ul>
                     </div>
                 </div>
@@ -881,39 +1002,39 @@
         <div class="container">
             <div class="proof-grid">
                 <div class="proof-card featured">
-                    <div class="proof-icon">📊</div>
-                    <h3>"Finally, someone talking about real numbers"</h3>
+                    <div class="proof-icon">🎯</div>
+                    <h3>"Finally, something my budtenders actually read"</h3>
                     <p>
-                        I've been in this industry for 6 years. Every newsletter is fluff and press releases. This is the first one that actually tells me what's happening to wholesale prices before I find out the hard way.
+                        I've tried sharing industry newsletters with my team, but they're too focused on finance and regulations. The Playbook gives my budtenders real scripts and scenarios they can use on the floor. Our upsell rate went up 15% after we started using the customer corner tips.
                     </p>
                     <div class="proof-attribution">
-                        <strong>Marcus T.</strong>
-                        <span>Multi-location operator, Western MA</span>
+                        <strong>Dana M.</strong>
+                        <span>Dispensary Owner, Western MA</span>
                     </div>
                 </div>
                 
                 <div class="proof-card">
                     <div class="proof-icon">📈</div>
-                    <h3>340+ dispensary operators</h3>
-                    <p>Already getting the Tuesday report.</p>
+                    <h3>520+ dispensary pros</h3>
+                    <p>Owners, managers, and budtenders getting the weekly playbook.</p>
                 </div>
                 
                 <div class="proof-card">
                     <div class="proof-icon">⚡</div>
-                    <h3>58% open rate</h3>
-                    <p>People actually read this. (Industry avg: 21%)</p>
+                    <h3>62% open rate</h3>
+                    <p>People actually open this. (Industry avg: 21%)</p>
                 </div>
                 
                 <div class="proof-card">
-                    <div class="proof-icon">🎯</div>
-                    <h3>No sponsored content</h3>
-                    <p>No vendor ads. Just signal.</p>
+                    <div class="proof-icon">💬</div>
+                    <h3>Ready-to-use scripts</h3>
+                    <p>Actual phrases that convert, not theory.</p>
                 </div>
                 
                 <div class="proof-card">
                     <div class="proof-icon">🔒</div>
-                    <h3>MA-specific intel</h3>
-                    <p>Not generic cannabis news. Your market.</p>
+                    <h3>No sponsored fluff</h3>
+                    <p>No vendor ads. Just ops that work.</p>
                 </div>
             </div>
         </div>
@@ -924,30 +1045,104 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-kicker">every tuesday morning</span>
-                <h2>What's in the Operator's Report</h2>
-                <p>Not news. Intel. The stuff that actually affects your bottom line.</p>
+                <h2>What You'll Get</h2>
+                <p>Not generic cannabis news. Real ops intel you can use this week.</p>
             </div>
             
             <div class="inside-grid">
                 <div class="inside-card">
-                    <span class="inside-number">01</span>
-                    <h3>Wholesale Price Tracker</h3>
-                    <p>Real prices from real transactions. Not stale data from 6 months ago. Know what flower, concentrates, and edibles are actually moving for.</p>
-                    <span class="tag">→ updated weekly</span>
+                    <div class="inside-icon">📅</div>
+                    <h3>This Week's Prep</h3>
+                    <p>Holiday countdowns, inventory alerts, and what to have ready before the weekend rush. Never get caught off-guard again.</p>
+                    <span class="tag">→ plan ahead</span>
                 </div>
                 
                 <div class="inside-card">
-                    <span class="inside-number">02</span>
-                    <h3>Margin Pressure Index</h3>
-                    <p>Our proprietary score that tracks compression across the state. See how your region compares and where the squeeze is tightest.</p>
-                    <span class="tag">→ MA exclusive</span>
+                    <div class="inside-icon">🔥</div>
+                    <h3>What's Selling</h3>
+                    <p>Real product trends moving in MA right now. Which SKUs are hot, what's cooling off, and what to stock up on.</p>
+                    <span class="tag">→ weekly intel</span>
                 </div>
                 
                 <div class="inside-card">
-                    <span class="inside-number">03</span>
-                    <h3>Operator Playbook</h3>
-                    <p>One tactical move per week. Menu optimization, vendor negotiation, inventory timing. Stuff that's working for dispensary operators right now.</p>
-                    <span class="tag">→ actionable, not theoretical</span>
+                    <div class="inside-icon">💬</div>
+                    <h3>Customer Corner</h3>
+                    <p>Scripts and scenarios for tricky customer interactions. "What's the difference?" "What should I get?" — handled.</p>
+                    <span class="tag">→ ready to use</span>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-icon">⚡</div>
+                    <h3>Quick Wins</h3>
+                    <p>One tactical move per week that takes 30 minutes or less. Display tweaks, menu updates, team huddle topics.</p>
+                    <span class="tag">→ low effort, high impact</span>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-icon">📋</div>
+                    <h3>Compliance Check</h3>
+                    <p>Quick reminders on what's changing, what's due, and what inspectors are looking for this month.</p>
+                    <span class="tag">→ stay compliant</span>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-icon">💡</div>
+                    <h3>Margin Tips</h3>
+                    <p>Simple pricing and margin moves that add up. No accounting degree required.</p>
+                    <span class="tag">→ keep more profit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sample Preview -->
+    <section class="sample-section">
+        <div class="container">
+            <div class="sample-grid">
+                <div class="sample-content">
+                    <span class="section-kicker">see for yourself</span>
+                    <h2>Ops-Focused Content, Every Week</h2>
+                    <p>
+                        No fluff. No press releases. Just the stuff that helps you run a tighter shop and serve customers better.
+                    </p>
+                    <p>
+                        <strong>Here's what a typical issue looks like.</strong> Each section is designed to be scannable in under 5 minutes — so even busy budtenders can get value on a quick break.
+                    </p>
+                </div>
+                
+                <div class="sample-preview-card">
+                    <div class="sample-header">Issue #47 — February 4, 2026</div>
+                    <div class="sample-title">Valentine's Prep + The "What Should I Get?" Script</div>
+                    
+                    <div class="sample-section-item">
+                        <div class="sample-section-title">📅 This Week's Prep</div>
+                        <div class="sample-section-desc">3 V-day products to feature, display ideas that move units, and the inventory check to run now.</div>
+                    </div>
+                    
+                    <div class="sample-section-item">
+                        <div class="sample-section-title">🔥 What's Selling</div>
+                        <div class="sample-section-desc">Infused pre-rolls up 40% week-over-week. Here's why and how to merchandise them.</div>
+                    </div>
+                    
+                    <div class="sample-section-item">
+                        <div class="sample-section-title">💬 Customer Corner</div>
+                        <div class="sample-section-desc">The script for "What's the difference between these two?" that leads to bigger baskets.</div>
+                    </div>
+                    
+                    <div class="sample-section-item">
+                        <div class="sample-section-title">⚡ Quick Win</div>
+                        <div class="sample-section-desc">15-minute menu audit: Remove 3 SKUs that haven't moved in 60 days. Free up shelf space.</div>
+                    </div>
+                    
+                    <div class="sample-section-item">
+                        <div class="sample-section-title">📋 Compliance Check</div>
+                        <div class="sample-section-desc">Metrc batching reminder: Double-check your incoming manifests this week.</div>
+                    </div>
+                    
+                    <div class="sample-section-item">
+                        <div class="sample-section-title">💡 Margin Tip</div>
+                        <div class="sample-section-desc">Bundle math: How to build a $60 V-day gift set that customers love and you profit on.</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -962,18 +1157,18 @@
                 </div>
                 
                 <div class="about-content">
-                    <h2>I spent 4 years watching dispensary operators fly blind.</h2>
+                    <h2>I built this because most cannabis content ignores the people on the floor.</h2>
                     
                     <p>
-                        I've worked with dispensary operators across Massachusetts since the adult-use launch. <strong>The pattern is always the same:</strong> smart people making decisions with outdated data, finding out about price shifts after they've already eaten into margins.
+                        I've worked with dispensaries across Massachusetts for years. <strong>Here's what I noticed:</strong> Owners are drowning in data, budtenders are winging it with customers, and nothing connects the two.
                     </p>
                     
                     <p>
-                        The big MSOs have teams tracking this stuff. Independent dispensary operators? They're expected to just figure it out. That's not a fair fight.
+                        Most industry newsletters are written for investors or regulators. The people actually running the shop? Running blind.
                     </p>
                     
                     <p>
-                        <strong>The Operator's Margin Report exists to fix that.</strong> No fluff, no sponsored content, no pretending things are fine when wholesale is collapsing. Just the numbers, every Tuesday, so you can make better decisions.
+                        <strong>The Dispensary Playbook is different.</strong> It's written for owners who want their teams to win, and budtenders who want to level up. Weekly prep, real scripts, and quick wins that actually work. No fluff. Just ops.
                     </p>
                     
                     <div class="about-signature">— Jake</div>
@@ -985,17 +1180,17 @@
     <!-- Final CTA -->
     <section class="cta-section">
         <div class="container">
-            <h2>Get your free Margin Pressure Snapshot</h2>
+            <h2>Get your free weekly playbook</h2>
             <p class="tagline">
-                Plus the weekly report. No credit card. No sales calls. Just data.
+                Join 520+ dispensary owners and budtenders who get prepped every Tuesday.
             </p>
             
             <form class="cta-form" action="#" method="post">
                 <input type="email" placeholder="your@email.com" required>
-                <button type="submit" class="btn-primary">Get the snapshot →</button>
+                <button type="submit" class="btn-primary">Get the playbook →</button>
             </form>
             
-            <p class="cta-annotation">join 340+ dispensary operators who already know the numbers ✓</p>
+            <p class="cta-annotation">no spam, no sales calls, just the good stuff ✓</p>
         </div>
     </section>
     
@@ -1003,7 +1198,7 @@
     <footer>
         <div class="container">
             <div class="footer-inner">
-                <p class="footer-copy">© 2026 The Operator's Margin Report. Built in Massachusetts.</p>
+                <p class="footer-copy">© 2026 The Dispensary Playbook. Built for MA dispensaries.</p>
                 <div class="footer-links">
                     <a href="#">Privacy</a>
                     <a href="#">Terms</a>
