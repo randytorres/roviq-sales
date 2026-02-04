@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Operator's Margin Report | The numbers they won't tell you</title>
+    <meta name="description" content="Weekly intel for MA dispensary operators. Real margin data, wholesale trends, and the numbers that actually matter. No fluff, just signal.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           ANTI-AI DESIGN: Human, Editorial, Warm
+           ============================================ */
+        
+        :root {
+            /* Grounded Urgency Palette */
+            --paper: #F5F2EA;
+            --stone: #E3E0D6;
+            --ink: #1A1917;
+            --ember: #D94F3D;
+            --oxide: #4A5D4E;
+            --cream: #FAF8F3;
+            
+            /* Typography */
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-handwritten: 'Gloria Hallelujah', cursive;
+            
+            /* Spacing (8pt grid) */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 48px;
+            --space-xl: 80px;
+            --space-2xl: 120px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Film grain overlay - 5% opacity for subtle texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        
+        /* ============================================
+           HEADER - Minimal, Editorial
+           ============================================ */
+        header {
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--ember);
+        }
+        
+        .nav-hint {
+            font-family: var(--font-handwritten);
+            font-size: 0.85rem;
+            color: var(--oxide);
+            transform: rotate(-2deg);
+        }
+        
+        /* ============================================
+           HERO - Asymmetric, Editorial Feel
+           ============================================ */
+        .hero {
+            padding: var(--space-xl) 0 var(--space-2xl);
+            position: relative;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: var(--space-lg);
+            align-items: start;
+        }
+        
+        .hero-content {
+            padding-top: var(--space-lg);
+        }
+        
+        .kicker {
+            font-family: var(--font-handwritten);
+            color: var(--ember);
+            font-size: 1.1rem;
+            margin-bottom: var(--space-sm);
+            display: inline-block;
+            transform: rotate(-1.5deg);
+        }
+        
+        .kicker::before {
+            content: '→ ';
+        }
+        
+        h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            margin-bottom: var(--space-md);
+            color: var(--ink);
+        }
+        
+        h1 .highlight {
+            color: var(--ember);
+            position: relative;
+        }
+        
+        /* Hand-drawn underline effect */
+        h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5.5C20 2.5 40 6 60 4C80 2 99 5 99 5' stroke='%23D94F3D' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+            background-size: 100px 8px;
+            opacity: 0.4;
+        }
+        
+        .tagline {
+            font-size: 1.35rem;
+            color: rgba(26, 25, 23, 0.7);
+            margin-bottom: var(--space-lg);
+            max-width: 480px;
+            line-height: 1.5;
+        }
+        
+        .tagline strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        /* Stats callout - hand-annotated feel */
+        .stat-callout {
+            background: var(--cream);
+            border: 1px solid rgba(26, 25, 23, 0.08);
+            border-radius: 12px;
+            padding: var(--space-md);
+            margin-bottom: var(--space-lg);
+            position: relative;
+            max-width: 420px;
+        }
+        
+        .stat-callout::before {
+            content: 'look at this ↓';
+            font-family: var(--font-handwritten);
+            position: absolute;
+            top: -28px;
+            left: 20px;
+            color: var(--ember);
+            font-size: 0.9rem;
+            transform: rotate(-3deg);
+        }
+        
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--ember);
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(26, 25, 23, 0.7);
+        }
+        
+        .stat-label strong {
+            color: var(--ink);
+        }
+        
+        /* CTA Buttons */
+        .cta-group {
+            display: flex;
+            gap: var(--space-sm);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: var(--ember);
+            color: white;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 16px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(217, 79, 61, 0.25);
+        }
+        
+        .btn-secondary {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: rgba(26, 25, 23, 0.6);
+            text-decoration: none;
+            padding: var(--space-sm);
+        }
+        
+        .btn-secondary:hover {
+            color: var(--ink);
+        }
+        
+        /* Hero Card - Signup Form */
+        .hero-card {
+            background: var(--cream);
+            border: 1px solid rgba(26, 25, 23, 0.08);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            position: relative;
+        }
+        
+        .hero-card::after {
+            content: 'free!';
+            font-family: var(--font-handwritten);
+            position: absolute;
+            top: -16px;
+            right: 30px;
+            background: var(--oxide);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            transform: rotate(4deg);
+        }
+        
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .card-subtitle {
+            color: rgba(26, 25, 23, 0.6);
+            font-size: 0.95rem;
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-sm);
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: rgba(26, 25, 23, 0.7);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            border: 1px solid rgba(26, 25, 23, 0.15);
+            border-radius: 8px;
+            background: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--ember);
+            box-shadow: 0 0 0 3px rgba(217, 79, 61, 0.1);
+        }
+        
+        .form-group input::placeholder {
+            color: rgba(26, 25, 23, 0.35);
+        }
+        
+        .form-submit {
+            width: 100%;
+            margin-top: var(--space-sm);
+        }
+        
+        .privacy-note {
+            font-size: 0.8rem;
+            color: rgba(26, 25, 23, 0.5);
+            margin-top: var(--space-sm);
+            text-align: center;
+        }
+        
+        /* What You Get List */
+        .get-list {
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid rgba(26, 25, 23, 0.08);
+        }
+        
+        .get-list-title {
+            font-family: var(--font-handwritten);
+            font-size: 0.9rem;
+            color: var(--oxide);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .get-list ul {
+            list-style: none;
+        }
+        
+        .get-list li {
+            font-size: 0.9rem;
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+            color: rgba(26, 25, 23, 0.8);
+        }
+        
+        .get-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--oxide);
+            font-weight: 600;
+        }
+        
+        /* ============================================
+           SOCIAL PROOF - Bento-ish, Asymmetric
+           ============================================ */
+        .proof-section {
+            padding: var(--space-xl) 0;
+            background: var(--stone);
+            position: relative;
+        }
+        
+        .proof-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(26, 25, 23, 0.08);
+        }
+        
+        .proof-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: var(--space-md);
+        }
+        
+        .proof-card {
+            background: var(--paper);
+            border: 1px solid rgba(26, 25, 23, 0.06);
+            border-radius: 12px;
+            padding: var(--space-md);
+        }
+        
+        .proof-card.featured {
+            grid-row: span 2;
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .proof-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--cream);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-sm);
+            font-size: 1.5rem;
+        }
+        
+        .proof-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .proof-card p {
+            font-size: 0.9rem;
+            color: rgba(26, 25, 23, 0.7);
+            line-height: 1.5;
+        }
+        
+        .proof-card.featured h3 {
+            font-size: 1.3rem;
+        }
+        
+        .proof-card.featured p {
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+        
+        .proof-attribution {
+            margin-top: var(--space-md);
+            padding-top: var(--space-sm);
+            border-top: 1px solid rgba(26, 25, 23, 0.08);
+            font-size: 0.85rem;
+        }
+        
+        .proof-attribution strong {
+            display: block;
+            color: var(--ink);
+        }
+        
+        .proof-attribution span {
+            color: rgba(26, 25, 23, 0.5);
+        }
+        
+        /* ============================================
+           WHAT'S INSIDE - Editorial Layout
+           ============================================ */
+        .inside-section {
+            padding: var(--space-2xl) 0;
+        }
+        
+        .section-header {
+            max-width: 600px;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .section-kicker {
+            font-family: var(--font-handwritten);
+            color: var(--ember);
+            font-size: 1rem;
+            margin-bottom: var(--space-sm);
+            display: block;
+        }
+        
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .section-header p {
+            color: rgba(26, 25, 23, 0.7);
+            font-size: 1.1rem;
+        }
+        
+        .inside-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+        
+        .inside-card {
+            background: var(--cream);
+            border: 1px solid rgba(26, 25, 23, 0.06);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            position: relative;
+            transition: transform 0.2s;
+        }
+        
+        .inside-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .inside-card:nth-child(2) {
+            transform: translateY(20px);
+        }
+        
+        .inside-card:nth-child(2):hover {
+            transform: translateY(16px);
+        }
+        
+        .inside-number {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(26, 25, 23, 0.08);
+            position: absolute;
+            top: var(--space-sm);
+            right: var(--space-md);
+        }
+        
+        .inside-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            color: var(--ink);
+        }
+        
+        .inside-card p {
+            font-size: 0.95rem;
+            color: rgba(26, 25, 23, 0.65);
+            line-height: 1.55;
+        }
+        
+        .inside-card .tag {
+            display: inline-block;
+            margin-top: var(--space-sm);
+            font-family: var(--font-handwritten);
+            font-size: 0.8rem;
+            color: var(--oxide);
+        }
+        
+        /* ============================================
+           ABOUT - Personal Touch
+           ============================================ */
+        .about-section {
+            padding: var(--space-xl) 0 var(--space-2xl);
+            background: var(--stone);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: var(--space-lg);
+            align-items: start;
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .about-image-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: var(--paper);
+            border-radius: 12px;
+            border: 1px solid rgba(26, 25, 23, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            filter: grayscale(0.3);
+        }
+        
+        .about-image::after {
+            content: 'the guy behind the numbers';
+            font-family: var(--font-handwritten);
+            position: absolute;
+            bottom: -24px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            color: var(--ember);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        
+        .about-content h2 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+        }
+        
+        .about-content p {
+            font-size: 1.05rem;
+            color: rgba(26, 25, 23, 0.75);
+            margin-bottom: var(--space-md);
+            line-height: 1.65;
+        }
+        
+        .about-content p:last-of-type {
+            margin-bottom: 0;
+        }
+        
+        .about-content strong {
+            color: var(--ink);
+        }
+        
+        .about-signature {
+            font-family: var(--font-handwritten);
+            font-size: 1.4rem;
+            color: var(--ink);
+            margin-top: var(--space-md);
+        }
+        
+        /* ============================================
+           FINAL CTA - Clean, Focused
+           ============================================ */
+        .cta-section {
+            padding: var(--space-2xl) 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .cta-section .tagline {
+            max-width: 480px;
+            margin: 0 auto var(--space-lg);
+            text-align: center;
+        }
+        
+        .cta-form {
+            display: flex;
+            gap: var(--space-sm);
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        
+        .cta-form input {
+            flex: 1;
+            padding: 16px 20px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            border: 1px solid rgba(26, 25, 23, 0.15);
+            border-radius: 100px;
+            background: white;
+        }
+        
+        .cta-form input:focus {
+            outline: none;
+            border-color: var(--ember);
+        }
+        
+        .cta-form button {
+            white-space: nowrap;
+        }
+        
+        .cta-annotation {
+            font-family: var(--font-handwritten);
+            color: var(--oxide);
+            font-size: 0.9rem;
+            margin-top: var(--space-md);
+        }
+        
+        /* ============================================
+           FOOTER - Minimal
+           ============================================ */
+        footer {
+            padding: var(--space-lg) 0;
+            border-top: 1px solid rgba(26, 25, 23, 0.08);
+        }
+        
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-copy {
+            font-size: 0.85rem;
+            color: rgba(26, 25, 23, 0.5);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+        
+        .footer-links a {
+            font-size: 0.85rem;
+            color: rgba(26, 25, 23, 0.5);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--ink);
+        }
+        
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-card {
+                max-width: 440px;
+            }
+            
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .proof-card.featured {
+                grid-row: auto;
+            }
+            
+            .inside-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .inside-card:nth-child(2) {
+                transform: none;
+            }
+            
+            .inside-card:nth-child(2):hover {
+                transform: translateY(-4px);
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                max-width: 200px;
+            }
+            
+            .cta-form {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .header-inner {
+                flex-direction: column;
+                gap: var(--space-xs);
+            }
+            
+            .nav-hint {
+                display: none;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .stat-callout::before {
+                display: none;
+            }
+            
+            .footer-inner {
+                flex-direction: column;
+                gap: var(--space-sm);
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">The Operator's <span>Margin</span> Report</a>
+                <span class="nav-hint">scroll down, it's worth it →</span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="kicker">for MA dispensary operators</span>
+                    
+                    <h1>The numbers<br>they <span class="highlight">won't tell you.</span></h1>
+                    
+                    <p class="tagline">
+                        Weekly intel for dispensary operators who want to <strong>actually understand</strong> what's happening to their margins. Data, not drama.
+                    </p>
+                    
+                    <div class="stat-callout">
+                        <div class="stat-number">73%</div>
+                        <p class="stat-label">
+                            of wholesale prices have <strong>collapsed</strong> since 2022.<br>
+                            Most dispensary operators don't even know why.
+                        </p>
+                    </div>
+                    
+                    <div class="cta-group">
+                        <a href="#signup" class="btn-primary">
+                            Get the free snapshot →
+                        </a>
+                        <a href="#inside" class="btn-secondary">See what's inside</a>
+                    </div>
+                </div>
+                
+                <div class="hero-card" id="signup">
+                    <h3 class="card-title">Margin Pressure Snapshot</h3>
+                    <p class="card-subtitle">See where your operation stands. Takes 2 minutes.</p>
+                    
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Your name</label>
+                            <input type="text" id="name" name="name" placeholder="Sarah" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Work email</label>
+                            <input type="email" id="email" name="email" placeholder="sarah@dispensary.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="store">Store name (optional)</label>
+                            <input type="text" id="store" name="store" placeholder="Green Valley Dispensary">
+                        </div>
+                        
+                        <button type="submit" class="btn-primary form-submit">
+                            Send me the snapshot
+                        </button>
+                        
+                        <p class="privacy-note">No spam. Just the numbers. Unsubscribe anytime.</p>
+                    </form>
+                    
+                    <div class="get-list">
+                        <p class="get-list-title">what you'll get:</p>
+                        <ul>
+                            <li>Your personalized margin pressure score</li>
+                            <li>Weekly Operator's Report (Tuesdays)</li>
+                            <li>Price intel before it's public</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Social Proof -->
+    <section class="proof-section">
+        <div class="container">
+            <div class="proof-grid">
+                <div class="proof-card featured">
+                    <div class="proof-icon">📊</div>
+                    <h3>"Finally, someone talking about real numbers"</h3>
+                    <p>
+                        I've been in this industry for 6 years. Every newsletter is fluff and press releases. This is the first one that actually tells me what's happening to wholesale prices before I find out the hard way.
+                    </p>
+                    <div class="proof-attribution">
+                        <strong>Marcus T.</strong>
+                        <span>Multi-location operator, Western MA</span>
+                    </div>
+                </div>
+                
+                <div class="proof-card">
+                    <div class="proof-icon">📈</div>
+                    <h3>340+ dispensary operators</h3>
+                    <p>Already getting the Tuesday report.</p>
+                </div>
+                
+                <div class="proof-card">
+                    <div class="proof-icon">⚡</div>
+                    <h3>58% open rate</h3>
+                    <p>People actually read this. (Industry avg: 21%)</p>
+                </div>
+                
+                <div class="proof-card">
+                    <div class="proof-icon">🎯</div>
+                    <h3>No sponsored content</h3>
+                    <p>No vendor ads. Just signal.</p>
+                </div>
+                
+                <div class="proof-card">
+                    <div class="proof-icon">🔒</div>
+                    <h3>MA-specific intel</h3>
+                    <p>Not generic cannabis news. Your market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What's Inside -->
+    <section class="inside-section" id="inside">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">every tuesday morning</span>
+                <h2>What's in the Operator's Report</h2>
+                <p>Not news. Intel. The stuff that actually affects your bottom line.</p>
+            </div>
+            
+            <div class="inside-grid">
+                <div class="inside-card">
+                    <span class="inside-number">01</span>
+                    <h3>Wholesale Price Tracker</h3>
+                    <p>Real prices from real transactions. Not stale data from 6 months ago. Know what flower, concentrates, and edibles are actually moving for.</p>
+                    <span class="tag">→ updated weekly</span>
+                </div>
+                
+                <div class="inside-card">
+                    <span class="inside-number">02</span>
+                    <h3>Margin Pressure Index</h3>
+                    <p>Our proprietary score that tracks compression across the state. See how your region compares and where the squeeze is tightest.</p>
+                    <span class="tag">→ MA exclusive</span>
+                </div>
+                
+                <div class="inside-card">
+                    <span class="inside-number">03</span>
+                    <h3>Operator Playbook</h3>
+                    <p>One tactical move per week. Menu optimization, vendor negotiation, inventory timing. Stuff that's working for dispensary operators right now.</p>
+                    <span class="tag">→ actionable, not theoretical</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-image-placeholder">👤</div>
+                </div>
+                
+                <div class="about-content">
+                    <h2>I spent 4 years watching dispensary operators fly blind.</h2>
+                    
+                    <p>
+                        I've worked with dispensary operators across Massachusetts since the adult-use launch. <strong>The pattern is always the same:</strong> smart people making decisions with outdated data, finding out about price shifts after they've already eaten into margins.
+                    </p>
+                    
+                    <p>
+                        The big MSOs have teams tracking this stuff. Independent dispensary operators? They're expected to just figure it out. That's not a fair fight.
+                    </p>
+                    
+                    <p>
+                        <strong>The Operator's Margin Report exists to fix that.</strong> No fluff, no sponsored content, no pretending things are fine when wholesale is collapsing. Just the numbers, every Tuesday, so you can make better decisions.
+                    </p>
+                    
+                    <div class="about-signature">— Jake</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Get your free Margin Pressure Snapshot</h2>
+            <p class="tagline">
+                Plus the weekly report. No credit card. No sales calls. Just data.
+            </p>
+            
+            <form class="cta-form" action="#" method="post">
+                <input type="email" placeholder="your@email.com" required>
+                <button type="submit" class="btn-primary">Get the snapshot →</button>
+            </form>
+            
+            <p class="cta-annotation">join 340+ dispensary operators who already know the numbers ✓</p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <p class="footer-copy">© 2026 The Operator's Margin Report. Built in Massachusetts.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
