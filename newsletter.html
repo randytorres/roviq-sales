@@ -13,18 +13,18 @@
     
     <style>
         /* ============================================
-           ANTI-AI DESIGN: Human, Editorial, Warm
+           ANTI-AI DESIGN: Human, Editorial, Warm (DARK MODE)
            ============================================ */
         
         :root {
-            /* Grounded Urgency Palette */
-            --paper: #F5F2EA;
-            --stone: #E3E0D6;
-            --ink: #1A1917;
-            --ember: #D94F3D;
-            --oxide: #4A5D4E;
-            --cream: #FAF8F3;
-            --bay-blue: #1E4D6B;
+            /* Grounded Urgency Palette - Dark Mode */
+            --paper: #1a1a1a;  /* Warm Dark Background */
+            --stone: #242424;  /* Slightly lighter section bg */
+            --ink: #f5f2ea;    /* Cream Text */
+            --ember: #d4a853;  /* Warm Amber/Gold Accent */
+            --oxide: #9caea0;  /* Muted Green/Grey */
+            --cream: #2a2a2a;  /* Card Background */
+            --bay-blue: #7da0b3; /* Muted Blue */
             
             /* Typography */
             --font-heading: 'Space Grotesk', sans-serif;
@@ -59,7 +59,7 @@
             overflow-x: hidden;
         }
         
-        /* Film grain overlay - 5% opacity for subtle texture */
+        /* Film grain overlay - Adjusted for dark mode */
         body::before {
             content: '';
             position: fixed;
@@ -69,7 +69,7 @@
             height: 100%;
             pointer-events: none;
             z-index: 9999;
-            opacity: 0.04;
+            opacity: 0.03; /* Slightly lower opacity on dark */
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
         
@@ -85,7 +85,7 @@
            ============================================ */
         header {
             padding: var(--space-md) 0;
-            border-bottom: 1px solid rgba(26, 25, 23, 0.1);
+            border-bottom: 1px solid rgba(245, 242, 234, 0.1);
         }
         
         .header-inner {
@@ -114,7 +114,7 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--bay-blue);
-            background: rgba(30, 77, 107, 0.1);
+            background: rgba(125, 160, 179, 0.15);
             padding: 4px 10px;
             border-radius: 100px;
             margin-left: var(--space-sm);
@@ -174,7 +174,7 @@
             position: relative;
         }
         
-        /* Hand-drawn underline effect */
+        /* Hand-drawn underline effect - Updated color to Gold #d4a853 */
         h1 .highlight::after {
             content: '';
             position: absolute;
@@ -182,14 +182,14 @@
             left: 0;
             right: 0;
             height: 8px;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5.5C20 2.5 40 6 60 4C80 2 99 5 99 5' stroke='%23D94F3D' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5.5C20 2.5 40 6 60 4C80 2 99 5 99 5' stroke='%23d4a853' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
             background-size: 100px 8px;
-            opacity: 0.4;
+            opacity: 0.6;
         }
         
         .tagline {
             font-size: 1.35rem;
-            color: rgba(26, 25, 23, 0.7);
+            color: rgba(245, 242, 234, 0.7);
             margin-bottom: var(--space-lg);
             max-width: 480px;
             line-height: 1.5;
@@ -212,7 +212,7 @@
             font-family: var(--font-handwritten);
             font-size: 0.95rem;
             color: var(--oxide);
-            background: rgba(74, 93, 78, 0.08);
+            background: rgba(156, 174, 160, 0.1);
             padding: 8px 16px;
             border-radius: 100px;
         }
@@ -228,7 +228,7 @@
         /* Preview callout - hand-annotated feel */
         .preview-callout {
             background: var(--cream);
-            border: 1px solid rgba(26, 25, 23, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: var(--space-md);
             margin-bottom: var(--space-lg);
@@ -253,7 +253,7 @@
             padding-left: 28px;
             position: relative;
             color: var(--ink);
-            border-bottom: 1px solid rgba(26, 25, 23, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         
         .preview-item:last-child {
@@ -283,7 +283,7 @@
             align-items: center;
             gap: var(--space-xs);
             background: var(--ember);
-            color: white;
+            color: #1a1a1a; /* Dark text for contrast on gold */
             font-family: var(--font-heading);
             font-weight: 600;
             font-size: 1rem;
@@ -297,13 +297,13 @@
         
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(217, 79, 61, 0.25);
+            box-shadow: 0 8px 24px rgba(212, 168, 83, 0.25);
         }
         
         .btn-secondary {
             font-family: var(--font-body);
             font-size: 0.9rem;
-            color: rgba(26, 25, 23, 0.6);
+            color: rgba(245, 242, 234, 0.6);
             text-decoration: none;
             padding: var(--space-sm);
         }
@@ -315,7 +315,7 @@
         /* Hero Card - Signup Form */
         .hero-card {
             background: var(--cream);
-            border: 1px solid rgba(26, 25, 23, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: var(--space-lg);
             position: relative;
@@ -328,11 +328,12 @@
             top: -16px;
             right: 30px;
             background: var(--bay-blue);
-            color: white;
+            color: #1a1a1a;
             padding: 6px 14px;
             border-radius: 100px;
             font-size: 0.85rem;
             transform: rotate(4deg);
+            font-weight: 600;
         }
         
         .card-title {
@@ -343,7 +344,7 @@
         }
         
         .card-subtitle {
-            color: rgba(26, 25, 23, 0.6);
+            color: rgba(245, 242, 234, 0.6);
             font-size: 0.95rem;
             margin-bottom: var(--space-md);
         }
@@ -357,7 +358,7 @@
             font-size: 0.85rem;
             font-weight: 500;
             margin-bottom: 6px;
-            color: rgba(26, 25, 23, 0.7);
+            color: rgba(245, 242, 234, 0.7);
         }
         
         .form-group input {
@@ -365,20 +366,21 @@
             padding: 14px 16px;
             font-family: var(--font-body);
             font-size: 1rem;
-            border: 1px solid rgba(26, 25, 23, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 8px;
-            background: white;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--ink);
             transition: border-color 0.2s, box-shadow 0.2s;
         }
         
         .form-group input:focus {
             outline: none;
             border-color: var(--ember);
-            box-shadow: 0 0 0 3px rgba(217, 79, 61, 0.1);
+            box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.15);
         }
         
         .form-group input::placeholder {
-            color: rgba(26, 25, 23, 0.35);
+            color: rgba(245, 242, 234, 0.3);
         }
         
         .form-submit {
@@ -388,7 +390,7 @@
         
         .privacy-note {
             font-size: 0.8rem;
-            color: rgba(26, 25, 23, 0.5);
+            color: rgba(245, 242, 234, 0.4);
             margin-top: var(--space-sm);
             text-align: center;
         }
@@ -397,7 +399,7 @@
         .get-list {
             margin-top: var(--space-md);
             padding-top: var(--space-md);
-            border-top: 1px solid rgba(26, 25, 23, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .get-list-title {
@@ -416,7 +418,7 @@
             padding: 6px 0;
             padding-left: 24px;
             position: relative;
-            color: rgba(26, 25, 23, 0.8);
+            color: rgba(245, 242, 234, 0.8);
         }
         
         .get-list li::before {
@@ -443,7 +445,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: rgba(26, 25, 23, 0.08);
+            background: rgba(255, 255, 255, 0.08);
         }
         
         .proof-grid {
@@ -454,7 +456,7 @@
         
         .proof-card {
             background: var(--paper);
-            border: 1px solid rgba(26, 25, 23, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 12px;
             padding: var(--space-md);
         }
@@ -487,7 +489,7 @@
         
         .proof-card p {
             font-size: 0.9rem;
-            color: rgba(26, 25, 23, 0.7);
+            color: rgba(245, 242, 234, 0.7);
             line-height: 1.5;
         }
         
@@ -503,7 +505,7 @@
         .proof-attribution {
             margin-top: var(--space-md);
             padding-top: var(--space-sm);
-            border-top: 1px solid rgba(26, 25, 23, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             font-size: 0.85rem;
         }
         
@@ -513,7 +515,7 @@
         }
         
         .proof-attribution span {
-            color: rgba(26, 25, 23, 0.5);
+            color: rgba(245, 242, 234, 0.5);
         }
         
         /* ============================================
@@ -545,7 +547,7 @@
         }
         
         .section-header p {
-            color: rgba(26, 25, 23, 0.7);
+            color: rgba(245, 242, 234, 0.7);
             font-size: 1.1rem;
         }
         
@@ -557,7 +559,7 @@
         
         .inside-card {
             background: var(--cream);
-            border: 1px solid rgba(26, 25, 23, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 12px;
             padding: var(--space-lg);
             position: relative;
@@ -599,7 +601,7 @@
         
         .inside-card p {
             font-size: 0.95rem;
-            color: rgba(26, 25, 23, 0.65);
+            color: rgba(245, 242, 234, 0.65);
             line-height: 1.55;
         }
         
@@ -634,14 +636,14 @@
         
         .sample-content p {
             font-size: 1.05rem;
-            color: rgba(26, 25, 23, 0.75);
+            color: rgba(245, 242, 234, 0.75);
             margin-bottom: var(--space-md);
             line-height: 1.65;
         }
         
         .sample-preview-card {
             background: var(--paper);
-            border: 1px solid rgba(26, 25, 23, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 12px;
             padding: var(--space-lg);
             position: relative;
@@ -654,11 +656,12 @@
             top: -14px;
             left: 20px;
             background: var(--bay-blue);
-            color: white;
+            color: #1a1a1a;
             padding: 4px 12px;
             border-radius: 100px;
             font-size: 0.8rem;
             transform: rotate(-2deg);
+            font-weight: 600;
         }
         
         .sample-header {
@@ -681,7 +684,7 @@
         
         .sample-section-item {
             padding: var(--space-sm) 0;
-            border-bottom: 1px solid rgba(26, 25, 23, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         
         .sample-section-item:last-child {
@@ -697,7 +700,7 @@
         
         .sample-section-desc {
             font-size: 0.9rem;
-            color: rgba(26, 25, 23, 0.6);
+            color: rgba(245, 242, 234, 0.6);
         }
         
         /* ============================================
@@ -723,7 +726,7 @@
             aspect-ratio: 1;
             background: var(--cream);
             border-radius: 12px;
-            border: 1px solid rgba(26, 25, 23, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -752,7 +755,7 @@
         
         .about-content p {
             font-size: 1.05rem;
-            color: rgba(26, 25, 23, 0.75);
+            color: rgba(245, 242, 234, 0.75);
             margin-bottom: var(--space-md);
             line-height: 1.65;
         }
@@ -806,9 +809,10 @@
             padding: 16px 20px;
             font-family: var(--font-body);
             font-size: 1rem;
-            border: 1px solid rgba(26, 25, 23, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 100px;
-            background: white;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--ink);
         }
         
         .cta-form input:focus {
@@ -828,11 +832,52 @@
         }
         
         /* ============================================
+           CROSS LINKS SECTION
+           ============================================ */
+        .cross-links {
+            padding: var(--space-xl) 0;
+            background: var(--paper);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+        
+        .link-box {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: var(--space-md);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+        }
+        
+        .link-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: var(--space-sm);
+            color: var(--ink);
+        }
+        
+        .link-box a {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--ember);
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        
+        .link-box a:hover {
+            transform: translateX(4px);
+            text-decoration: underline;
+        }
+        
+        /* ============================================
            FOOTER - Minimal
            ============================================ */
         footer {
             padding: var(--space-lg) 0;
-            border-top: 1px solid rgba(26, 25, 23, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
         
         .footer-inner {
@@ -843,7 +888,7 @@
         
         .footer-copy {
             font-size: 0.85rem;
-            color: rgba(26, 25, 23, 0.5);
+            color: rgba(245, 242, 234, 0.5);
         }
         
         .footer-links {
@@ -853,7 +898,7 @@
         
         .footer-links a {
             font-size: 0.85rem;
-            color: rgba(26, 25, 23, 0.5);
+            color: rgba(245, 242, 234, 0.5);
             text-decoration: none;
         }
         
@@ -1221,6 +1266,16 @@
             </form>
             
             <p class="cta-annotation">written in Massachusetts, not generated in California ✓</p>
+        </div>
+    </section>
+
+    <!-- Cross Links -->
+    <section class="cross-links">
+        <div class="container">
+            <div class="link-box">
+                <h3>Are you a brand or cultivator looking to sell INTO dispensaries?</h3>
+                <a href="../intel.html">→ Check out The MA Market Intel Brief</a>
+            </div>
         </div>
     </section>
     
