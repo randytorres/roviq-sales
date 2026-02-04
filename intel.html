@@ -3,25 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stop Wasting Time on Dead Leads — We Find Your Buyers | MA Market Intel Service</title>
-    <meta name="description" content="Tell us what you sell. He'll analyze 600+ MA cannabis operators and deliver a qualified buyer list to your inbox. Done-for-you lead intelligence. No software, no hassle.">
+    <title>The MA Market Intel Brief | Vendor Intelligence for Massachusetts Cannabis</title>
+    <meta name="description" content="See which MA dispensaries are growing, stalling, or dying—before your competitors do. Bi-weekly market intel for cannabis brands and wholesalers.">
     
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* ============================================
+           ANTI-AI DESIGN: Human, Editorial, Warm
+           ============================================ */
+        
         :root {
-            --bg-deep: #1E1C1A;
-            --bg-card: #2C2926;
-            --text-warm: #ECEBE6;
-            --accent-lime: #CCFF00;
-            --support-silver: #A1A1AA;
-            --border-subtle: rgba(236, 235, 230, 0.08);
-            --border-accent: rgba(204, 255, 0, 0.3);
+            /* Grounded Urgency Palette */
+            --paper: #F5F2EA;
+            --stone: #E3E0D6;
+            --ink: #1A1917;
+            --ember: #D94F3D;
+            --oxide: #4A5D4E;
+            --cream: #FAF8F3;
+            --bay-blue: #1E4D6B;
+            
+            /* Typography */
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-handwritten: 'Gloria Hallelujah', cursive;
+            
+            /* Spacing (8pt grid) */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 48px;
+            --space-xl: 80px;
+            --space-2xl: 120px;
         }
         
-        *, *::before, *::after {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -32,15 +51,15 @@
         }
         
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-            background-color: var(--bg-deep);
-            color: var(--text-warm);
+            font-family: var(--font-body);
+            background-color: var(--paper);
+            color: var(--ink);
             line-height: 1.6;
-            font-size: 17px;
+            position: relative;
             overflow-x: hidden;
         }
         
-        /* Grain Texture Overlay */
+        /* Film grain overlay - 5% opacity for subtle texture */
         body::before {
             content: '';
             position: fixed;
@@ -48,1386 +67,784 @@
             left: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.035;
             pointer-events: none;
             z-index: 9999;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
         
+        /* Container */
         .container {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 0 32px;
+            padding: 0 var(--space-md);
         }
         
-        /* Typography */
-        h1, h2, h3, h4 {
-            font-family: 'Fraunces', Georgia, serif;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-            line-height: 1.15;
+        /* ============================================
+           HEADER - Minimal, Editorial
+           ============================================ */
+        header {
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(26, 25, 23, 0.1);
         }
         
-        .mono {
-            font-family: 'JetBrains Mono', monospace;
-        }
-        
-        .text-silver {
-            color: var(--support-silver);
-        }
-        
-        .text-lime {
-            color: var(--accent-lime);
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 20px 0;
-            background: linear-gradient(to bottom, var(--bg-deep) 0%, transparent 100%);
-        }
-        
-        nav .container {
+        .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo {
-            font-family: 'Fraunces', serif;
-            font-size: 20px;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
             font-weight: 600;
-            color: var(--text-warm);
+            letter-spacing: -0.02em;
+            color: var(--ink);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         
-        .logo-mark {
-            width: 32px;
-            height: 32px;
-            background: var(--accent-lime);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--bg-deep);
-            font-weight: 700;
-            font-size: 14px;
+        .logo span {
+            color: var(--ember);
         }
         
-        .nav-cta {
-            font-size: 14px;
+        .ma-badge {
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
             font-weight: 600;
-            color: var(--bg-deep);
-            background: var(--accent-lime);
-            padding: 12px 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--bay-blue);
+            background: rgba(30, 77, 107, 0.1);
+            padding: 4px 10px;
             border-radius: 100px;
-            text-decoration: none;
-            transition: all 0.2s ease;
+            margin-left: var(--space-sm);
         }
         
-        .nav-cta:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(204, 255, 0, 0.3);
-        }
-        
-        /* Hero Section */
+        /* ============================================
+           HERO - Asymmetric, Editorial Feel
+           ============================================ */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 140px 0 100px;
+            padding: var(--space-xl) 0 var(--space-2xl);
             position: relative;
         }
         
-        .hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--support-silver);
-            margin-bottom: 32px;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: var(--space-lg);
+            align-items: start;
         }
         
-        .hero-eyebrow::before {
+        .hero-content {
+            padding-top: var(--space-lg);
+        }
+        
+        .kicker {
+            font-family: var(--font-handwritten);
+            color: var(--ember);
+            font-size: 1.1rem;
+            margin-bottom: var(--space-sm);
+            display: inline-block;
+            transform: rotate(-1.5deg);
+        }
+        
+        .kicker::before {
+            content: '→ ';
+        }
+        
+        h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            margin-bottom: var(--space-md);
+            color: var(--ink);
+        }
+        
+        h1 .highlight {
+            color: var(--ember);
+            position: relative;
+        }
+        
+        /* Hand-drawn underline effect */
+        h1 .highlight::after {
             content: '';
-            width: 40px;
-            height: 1px;
-            background: var(--accent-lime);
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5.5C20 2.5 40 6 60 4C80 2 99 5 99 5' stroke='%23D94F3D' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+            background-size: 100px 8px;
+            opacity: 0.4;
         }
         
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 80px);
-            max-width: 900px;
-            margin-bottom: 32px;
+        .tagline {
+            font-size: 1.35rem;
+            color: rgba(26, 25, 23, 0.7);
+            margin-bottom: var(--space-lg);
+            max-width: 480px;
+            line-height: 1.5;
         }
         
-        .hero h1 span {
-            color: var(--accent-lime);
-            font-style: italic;
+        .tagline strong {
+            color: var(--ink);
+            font-weight: 600;
         }
         
-        .hero-sub {
-            font-size: 21px;
-            color: var(--support-silver);
-            max-width: 620px;
-            margin-bottom: 48px;
-            line-height: 1.7;
+        /* Preview callout - hand-annotated feel */
+        .preview-callout {
+            background: var(--cream);
+            border: 1px solid rgba(26, 25, 23, 0.08);
+            border-radius: 12px;
+            padding: var(--space-md);
+            margin-bottom: var(--space-lg);
+            position: relative;
+            max-width: 420px;
         }
         
-        .hero-sub strong {
-            color: var(--text-warm);
+        .preview-callout::before {
+            content: 'this week →';
+            font-family: var(--font-handwritten);
+            position: absolute;
+            top: -28px;
+            left: 20px;
+            color: var(--ember);
+            font-size: 0.9rem;
+            transform: rotate(-3deg);
         }
         
-        .hero-cta-group {
+        .preview-item {
+            font-size: 0.95rem;
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            color: var(--ink);
+            border-bottom: 1px solid rgba(26, 25, 23, 0.06);
+        }
+        
+        .preview-item:last-child {
+            border-bottom: none;
+        }
+        
+        .preview-item::before {
+            position: absolute;
+            left: 0;
+            font-size: 1.1rem;
+        }
+        
+        .preview-item.license::before { content: '🏗️'; }
+        .preview-item.distress::before { content: '📉'; }
+        .preview-item.price::before { content: '💵'; }
+        
+        /* CTA Buttons */
+        .cta-group {
             display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
+            gap: var(--space-sm);
             align-items: center;
+            flex-wrap: wrap;
         }
         
-        .primary-cta {
+        .btn-primary {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: var(--accent-lime);
-            color: var(--bg-deep);
-            font-size: 16px;
+            gap: var(--space-xs);
+            background: var(--ember);
+            color: white;
+            font-family: var(--font-heading);
             font-weight: 600;
-            padding: 18px 36px;
+            font-size: 1rem;
+            padding: 16px 32px;
             border-radius: 100px;
             text-decoration: none;
-            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
         
-        .primary-cta:hover {
+        .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(204, 255, 0, 0.25);
+            box-shadow: 0 8px 24px rgba(217, 79, 61, 0.25);
         }
         
-        .secondary-note {
-            font-size: 14px;
-            color: var(--support-silver);
+        .btn-secondary {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: rgba(26, 25, 23, 0.6);
+            text-decoration: none;
+            padding: var(--space-sm);
         }
         
-        /* Promise Strip */
-        .promise-strip {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 32px;
-            margin-top: 64px;
-            padding-top: 48px;
-            border-top: 1px solid var(--border-subtle);
+        .btn-secondary:hover {
+            color: var(--ink);
         }
         
-        .promise-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 15px;
-            color: var(--support-silver);
-        }
-        
-        .promise-icon {
-            color: var(--accent-lime);
-            font-size: 18px;
-        }
-        
-        /* Section Spacing */
-        section {
-            padding: 100px 0;
-        }
-        
-        .section-gap {
-            padding: 120px 0;
-        }
-        
-        .section-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: var(--accent-lime);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 20px;
-        }
-        
-        .section-title {
-            font-size: clamp(32px, 5vw, 52px);
-            max-width: 700px;
-        }
-        
-        /* Empathy Section */
-        .empathy {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        
-        .empathy-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 64px;
-        }
-        
-        .empathy-header h2 {
-            margin-bottom: 20px;
-        }
-        
-        .empathy-header p {
-            font-size: 19px;
-            color: var(--support-silver);
-            line-height: 1.7;
-        }
-        
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        
-        .pain-card {
-            background: var(--bg-deep);
-            border: 1px solid var(--border-subtle);
-            padding: 40px;
-            position: relative;
-        }
-        
-        .pain-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #ff4444, transparent);
-            opacity: 0.5;
-        }
-        
-        .pain-emoji {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        
-        .pain-card h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-        
-        .pain-card p {
-            color: var(--support-silver);
-            line-height: 1.7;
-            font-size: 15px;
-        }
-        
-        /* The Service Section */
-        .service-section {
-            padding: 120px 0;
-        }
-        
-        .service-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .service-text h2 {
-            font-size: 44px;
-            margin-bottom: 24px;
-        }
-        
-        .service-text h2 span {
-            color: var(--accent-lime);
-        }
-        
-        .service-text > p {
-            color: var(--support-silver);
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        
-        .randy-note {
-            background: rgba(204, 255, 0, 0.05);
-            border-left: 3px solid var(--accent-lime);
-            padding: 24px 28px;
-            margin-top: 32px;
-        }
-        
-        .randy-note p {
-            margin: 0;
-            font-size: 16px;
-            color: var(--text-warm);
-            line-height: 1.7;
-        }
-        
-        .randy-note strong {
-            color: var(--accent-lime);
-        }
-        
-        .service-visual {
-            background: var(--bg-card);
-            border: 1px solid var(--border-accent);
-            padding: 48px;
-        }
-        
-        .visual-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 32px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        
-        .visual-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--accent-lime);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
-        .visual-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: var(--support-silver);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        
-        .conversation-flow {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .convo-bubble {
-            padding: 16px 20px;
+        /* Hero Card - Signup Form */
+        .hero-card {
+            background: var(--cream);
+            border: 1px solid rgba(26, 25, 23, 0.08);
             border-radius: 12px;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-        
-        .convo-bubble.you {
-            background: rgba(204, 255, 0, 0.1);
-            border: 1px solid var(--border-accent);
-            align-self: flex-end;
-            max-width: 85%;
-        }
-        
-        .convo-bubble.randy {
-            background: var(--bg-deep);
-            border: 1px solid var(--border-subtle);
-            align-self: flex-start;
-            max-width: 85%;
-        }
-        
-        .convo-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 6px;
-            opacity: 0.7;
-        }
-        
-        /* How It Works */
-        .how-it-works {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 120px 0;
-        }
-        
-        .how-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 72px;
-        }
-        
-        .how-header h2 {
-            margin-bottom: 16px;
-        }
-        
-        .how-header p {
-            color: var(--support-silver);
-            font-size: 18px;
-        }
-        
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-        
-        .step-card {
-            background: var(--bg-deep);
-            border: 1px solid var(--border-subtle);
-            padding: 48px 40px;
-            text-align: center;
+            padding: var(--space-lg);
             position: relative;
         }
         
-        .step-number {
+        .hero-card::after {
+            content: 'Vendor Edition';
+            font-family: var(--font-handwritten);
             position: absolute;
-            top: -24px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 48px;
-            height: 48px;
-            background: var(--accent-lime);
-            color: var(--bg-deep);
-            font-family: 'Fraunces', serif;
-            font-size: 22px;
+            top: -16px;
+            right: 30px;
+            background: var(--bay-blue);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            transform: rotate(4deg);
+        }
+        
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
             font-weight: 600;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-bottom: var(--space-xs);
         }
         
-        .step-icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-            margin-top: 16px;
+        .card-subtitle {
+            color: rgba(26, 25, 23, 0.6);
+            font-size: 0.95rem;
+            margin-bottom: var(--space-md);
         }
         
-        .step-card h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
+        .form-group {
+            margin-bottom: var(--space-sm);
         }
         
-        .step-card p {
-            color: var(--support-silver);
-            font-size: 15px;
-            line-height: 1.7;
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: rgba(26, 25, 23, 0.7);
         }
         
-        .step-arrow {
-            display: none;
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            border: 1px solid rgba(26, 25, 23, 0.15);
+            border-radius: 8px;
+            background: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
         
-        /* What You Get */
-        .deliverables {
-            padding: 120px 0;
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--ember);
+            box-shadow: 0 0 0 3px rgba(217, 79, 61, 0.1);
         }
         
-        .deliverables-header {
+        .form-submit {
+            width: 100%;
+            margin-top: var(--space-sm);
+        }
+        
+        .privacy-note {
+            font-size: 0.8rem;
+            color: rgba(26, 25, 23, 0.5);
+            margin-top: var(--space-sm);
             text-align: center;
-            max-width: 650px;
-            margin: 0 auto 64px;
         }
         
-        .deliverables-header h2 {
-            margin-bottom: 16px;
+        /* The Problem Section */
+        .problem-section {
+            padding: var(--space-xl) 0;
+            background: var(--stone);
+            position: relative;
         }
         
-        .deliverables-header p {
-            color: var(--support-silver);
-            font-size: 18px;
+        .problem-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
         
-        .deliverables-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+        .problem-kicker {
+            font-family: var(--font-handwritten);
+            color: var(--ember);
+            font-size: 1.1rem;
+            margin-bottom: var(--space-sm);
+            display: inline-block;
+            transform: rotate(-1.5deg);
         }
         
-        .deliverable-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            padding: 36px;
-            display: flex;
-            gap: 20px;
+        .problem-content h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.1;
         }
         
-        .deliverable-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(204, 255, 0, 0.1);
-            border: 1px solid var(--border-accent);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            flex-shrink: 0;
-        }
-        
-        .deliverable-card h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        .deliverable-card p {
-            color: var(--support-silver);
-            font-size: 14px;
-            line-height: 1.7;
-        }
-        
-        .deliverable-badge {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 10px;
-            color: var(--accent-lime);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-top: 8px;
-        }
-        
-        /* Menu Gap Section */
-        .menu-gap-section {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border-subtle);
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 120px 0;
-        }
-        
-        .menu-gap-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .menu-gap-text h2 {
-            font-size: 42px;
-            margin-bottom: 24px;
-        }
-        
-        .menu-gap-text h2 span {
-            color: var(--accent-lime);
-        }
-        
-        .menu-gap-text p {
-            color: var(--support-silver);
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        
-        .menu-gap-example {
-            background: var(--bg-deep);
-            border: 1px solid var(--border-accent);
-            padding: 40px;
-        }
-        
-        .example-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 24px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        
-        .example-header span {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: var(--support-silver);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        
-        .example-scenario {
-            margin-bottom: 24px;
-        }
-        
-        .example-scenario h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--accent-lime);
-        }
-        
-        .example-scenario p {
-            color: var(--support-silver);
-            font-size: 14px;
+        .problem-content p {
+            font-size: 1.1rem;
             line-height: 1.6;
+            color: rgba(26, 25, 23, 0.8);
+            margin-bottom: var(--space-md);
         }
         
-        .example-result {
-            background: rgba(204, 255, 0, 0.08);
-            border: 1px solid var(--border-accent);
-            padding: 20px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* What's Inside */
+        .inside-section {
+            padding: var(--space-2xl) 0;
         }
         
-        .result-text {
-            font-size: 15px;
-        }
-        
-        .result-number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--accent-lime);
-        }
-        
-        /* Who This Helps */
-        .audience-section {
-            padding: 120px 0;
-        }
-        
-        .audience-header {
-            text-align: center;
+        .section-header {
             max-width: 600px;
-            margin: 0 auto 64px;
+            margin-bottom: var(--space-xl);
         }
         
-        .audience-header h2 {
-            margin-bottom: 16px;
+        .section-kicker {
+            font-family: var(--font-handwritten);
+            color: var(--ember);
+            font-size: 1rem;
+            margin-bottom: var(--space-sm);
+            display: block;
         }
         
-        .audience-header p {
-            color: var(--support-silver);
-            font-size: 18px;
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-sm);
         }
         
-        .audience-cards {
+        .inside-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: var(--space-md);
         }
         
-        .audience-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            padding: 40px;
+        .inside-card {
+            background: var(--cream);
+            border: 1px solid rgba(26, 25, 23, 0.06);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            position: relative;
+            transition: transform 0.2s;
+        }
+        
+        .inside-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .inside-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .inside-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            color: var(--ink);
+        }
+        
+        .inside-card p {
+            font-size: 0.95rem;
+            color: rgba(26, 25, 23, 0.65);
+            line-height: 1.55;
+        }
+        
+        /* Sample Preview */
+        .sample-section {
+            padding: var(--space-xl) 0 var(--space-2xl);
+            background: var(--paper);
+            border-top: 1px solid rgba(26, 25, 23, 0.08);
+        }
+        
+        .sample-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+        
+        .sample-content h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+        }
+        
+        .sample-preview-card {
+            background: white;
+            border: 1px solid rgba(26, 25, 23, 0.1);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            position: relative;
+            box-shadow: 0 12px 36px rgba(0,0,0,0.04);
+        }
+        
+        .sample-section-item {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(26, 25, 23, 0.06);
+        }
+        
+        .sample-section-item:last-child {
+            border-bottom: none;
+        }
+        
+        .sample-section-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            color: var(--ink);
+        }
+        
+        .sample-section-desc {
+            font-size: 0.9rem;
+            color: rgba(26, 25, 23, 0.6);
+        }
+        
+        /* Audience Section */
+        .audience-section {
+            padding: var(--space-xl) 0;
+            background: var(--cream);
+            border-top: 1px solid rgba(26, 25, 23, 0.08);
+        }
+        
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+        
+        .audience-item {
             text-align: center;
         }
         
         .audience-icon {
-            font-size: 40px;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: var(--space-sm);
+            display: inline-block;
         }
         
-        .audience-card h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
+        .audience-title {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            margin-bottom: 4px;
         }
         
-        .audience-card p {
-            color: var(--support-silver);
-            font-size: 15px;
-            line-height: 1.7;
-        }
-        
-        /* Pricing Section */
-        .pricing-section {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border-subtle);
-            padding: 120px 0;
-        }
-        
-        .pricing-wrapper {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        
-        .pricing-header h2 {
-            font-size: 44px;
-            margin-bottom: 16px;
-        }
-        
-        .pricing-header p {
-            color: var(--support-silver);
-            font-size: 18px;
-        }
-        
-        .pricing-card {
-            background: var(--bg-deep);
-            border: 2px solid var(--accent-lime);
-            padding: 56px;
+        /* Intel Pack CTA */
+        .intel-cta-section {
+            padding: var(--space-2xl) 0;
+            background: var(--ink);
+            color: var(--paper);
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
         
-        .pricing-badge {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-lime);
-            color: var(--bg-deep);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 8px 20px;
-            letter-spacing: 0.05em;
+        .intel-cta-section h2 {
+            color: var(--paper);
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: var(--space-md);
         }
         
-        .pricing-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 13px;
-            color: var(--support-silver);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 8px;
+        .intel-cta-section p {
+            color: rgba(245, 242, 234, 0.8);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto var(--space-lg);
         }
         
-        .pricing-amount {
-            font-family: 'Fraunces', serif;
-            font-size: 72px;
-            font-weight: 500;
-            margin-bottom: 8px;
-            color: var(--accent-lime);
-        }
-        
-        .pricing-desc {
-            color: var(--support-silver);
-            font-size: 17px;
-            margin-bottom: 36px;
-        }
-        
-        .pricing-includes {
-            text-align: left;
-            border-top: 1px solid var(--border-subtle);
-            padding-top: 32px;
-            margin-bottom: 36px;
-        }
-        
-        .pricing-includes h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 14px;
+        .intel-btn {
+            background: var(--ember);
+            color: white;
+            font-family: var(--font-heading);
             font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--support-silver);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-size: 1.1rem;
+            padding: 18px 40px;
+            border-radius: 100px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
         }
         
-        .includes-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+        .intel-btn:hover {
+            transform: translateY(-2px);
         }
         
-        .includes-list li {
-            font-size: 15px;
-            color: var(--text-warm);
-            padding-left: 24px;
-            position: relative;
-        }
-        
-        .includes-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent-lime);
-            font-weight: 600;
-        }
-        
-        .pricing-cta {
+        .intel-price {
             display: block;
-            background: var(--accent-lime);
-            color: var(--bg-deep);
-            font-size: 17px;
-            font-weight: 600;
-            padding: 20px 40px;
-            border-radius: 100px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            margin-bottom: 20px;
-        }
-        
-        .pricing-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(204, 255, 0, 0.3);
-        }
-        
-        .pricing-subtext {
-            font-size: 14px;
-            color: var(--support-silver);
-        }
-        
-        .scarcity-notice {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            border: 1px solid rgba(255, 68, 68, 0.3);
-            background: rgba(255, 68, 68, 0.05);
-        }
-        
-        .scarcity-notice p {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
-            color: #ff6b6b;
-        }
-        
-        /* Final CTA */
-        .final-cta {
-            padding: 120px 0;
-            text-align: center;
-        }
-        
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .cta-content h2 {
-            font-size: 48px;
-            margin-bottom: 24px;
-        }
-        
-        .cta-content h2 span {
-            color: var(--accent-lime);
-            font-style: italic;
-        }
-        
-        .cta-content > p {
-            font-size: 19px;
-            color: var(--support-silver);
-            margin-bottom: 48px;
-            line-height: 1.7;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            justify-content: center;
-            margin-bottom: 32px;
-        }
-        
-        .cta-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--accent-lime);
-            color: var(--bg-deep);
-            font-size: 17px;
-            font-weight: 600;
-            padding: 20px 40px;
-            border-radius: 100px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        
-        .cta-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(204, 255, 0, 0.3);
-        }
-        
-        .cta-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: transparent;
-            color: var(--text-warm);
-            font-size: 17px;
-            font-weight: 600;
-            padding: 20px 40px;
-            border-radius: 100px;
-            text-decoration: none;
-            border: 1px solid var(--border-subtle);
-            transition: all 0.2s ease;
-        }
-        
-        .cta-secondary:hover {
-            border-color: var(--accent-lime);
-        }
-        
-        .cta-subtext {
-            font-size: 15px;
-            color: var(--support-silver);
-        }
-        
-        .cta-subtext a {
-            color: var(--accent-lime);
-            text-decoration: none;
+            margin-top: var(--space-sm);
+            font-family: var(--font-handwritten);
+            color: rgba(245, 242, 234, 0.6);
+            font-size: 0.9rem;
         }
         
         /* Footer */
         footer {
-            border-top: 1px solid var(--border-subtle);
-            padding: 48px 0;
+            padding: var(--space-lg) 0;
+            border-top: 1px solid rgba(26, 25, 23, 0.08);
+            background: var(--paper);
         }
         
-        footer .container {
+        .footer-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        .footer-text {
-            font-size: 14px;
-            color: var(--support-silver);
-        }
-        
-        .footer-links {
-            display: flex;
-            gap: 32px;
-        }
-        
-        .footer-links a {
-            font-size: 14px;
-            color: var(--support-silver);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--text-warm);
+        .footer-copy {
+            font-size: 0.85rem;
+            color: rgba(26, 25, 23, 0.5);
         }
         
         /* Responsive */
-        @media (max-width: 1024px) {
-            .service-content,
-            .menu-gap-content {
+        @media (max-width: 900px) {
+            .hero-grid {
                 grid-template-columns: 1fr;
-                gap: 48px;
+            }
+            .hero-card {
+                max-width: 440px;
+            }
+            .inside-grid, .audience-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .sample-grid {
+                grid-template-columns: 1fr;
             }
         }
         
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
+        @media (max-width: 600px) {
+            .header-inner {
+                flex-direction: column;
+                gap: var(--space-xs);
             }
-            
-            .pain-grid,
-            .steps-grid,
-            .deliverables-grid,
-            .audience-cards,
-            .includes-list {
+            .inside-grid, .audience-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .section-title {
-                font-size: 28px;
-            }
-            
-            .pricing-amount {
-                font-size: 56px;
-            }
-            
-            .cta-content h2 {
-                font-size: 32px;
-            }
-            
-            .promise-strip {
-                flex-direction: column;
-                gap: 16px;
-            }
-            
-            footer .container {
-                flex-direction: column;
-                gap: 24px;
-                text-align: center;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
+            .preview-callout::before {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
+    <!-- Header -->
+    <header>
         <div class="container">
-            <a href="#" class="logo">
-                <div class="logo-mark">R</div>
-                <span>Roviq</span>
-            </a>
-            <a href="mailto:randy@roviqai.xyz" class="nav-cta">Get Started</a>
+            <div class="header-inner">
+                <a href="#" class="logo">The MA <span>Market Intel Brief</span> <span class="ma-badge">Vendor Edition</span></a>
+                <span class="logo" style="font-size: 0.85rem; color: var(--oxide); font-weight: 400;">by Roviq</span>
+            </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
+    </header>
+    
+    <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <div class="hero-eyebrow">Done-for-You Lead Intel</div>
-            <h1>Stop Wasting Time on <span>Dead Leads.</span><br>We Find Your Buyers.</h1>
-            <p class="hero-sub">Tell us what you sell. We analyze 600+ Massachusetts cannabis operators. <strong>You get a qualified buyer list delivered to your inbox.</strong> No software. No learning curve. No hassle.</p>
-            
-            <div class="hero-cta-group">
-                <a href="mailto:randy@roviqai.xyz?subject=Intel%20Service%20Inquiry" class="primary-cta">
-                    Book a Call →
-                </a>
-                <span class="secondary-note">Response within 24 hours</span>
-            </div>
-            
-            <div class="promise-strip">
-                <div class="promise-item">
-                    <span class="promise-icon">✓</span>
-                    <span>We do all the work</span>
-                </div>
-                <div class="promise-item">
-                    <span class="promise-icon">✓</span>
-                    <span>Delivered to your inbox</span>
-                </div>
-                <div class="promise-item">
-                    <span class="promise-icon">✓</span>
-                    <span>No software to learn</span>
-                </div>
-                <div class="promise-item">
-                    <span class="promise-icon">✓</span>
-                    <span>One call, that's it</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Empathy Section -->
-    <section class="empathy section-gap">
-        <div class="container">
-            <div class="empathy-header">
-                <div class="section-label">We Get It</div>
-                <h2 class="section-title">Selling to Dispensaries Is Exhausting</h2>
-                <p>You've been there. Driving across the state, pitching to stores that closed last quarter. Sending emails into the void. Wondering who actually needs what you sell.</p>
-            </div>
-            
-            <div class="pain-grid">
-                <div class="pain-card">
-                    <div class="pain-emoji">😤</div>
-                    <h3>Chasing Zombies</h3>
-                    <p>40% of your outreach goes to stores that are closed, struggling, or just not buying. That's two days a week wasted on dead leads.</p>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-emoji">🎯</div>
-                    <h3>Flying Blind</h3>
-                    <p>You don't know who actually needs your product category. You're guessing. And guessing means losing to competitors who know.</p>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-emoji">📧</div>
-                    <h3>The Black Hole</h3>
-                    <p>info@dispensary.com goes nowhere. You need the buyer's actual name, their actual email. Not a spam folder.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Service -->
-    <section class="service-section">
-        <div class="container">
-            <div class="service-content">
-                <div class="service-text">
-                    <div class="section-label">The Service</div>
-                    <h2>We Do the <span>Work.</span><br>You Get the List.</h2>
-                    <p>This isn't a tool you have to figure out. This isn't a database you wade through. This is a service.</p>
-                    <p>You tell us what you sell. He analyzes the entire Massachusetts market—every operator, every menu, every signal. Then he delivers a qualified buyer list, customized to your exact product category.</p>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="kicker">Stop pitching blind</span>
                     
-                    <div class="randy-note">
-                        <p><strong>Real talk:</strong> We personally review the data, builds the filters, and makes sure you're getting leads that actually make sense for YOUR business. This is consultant-level intel, not self-serve SaaS.</p>
+                    <h1>See which MA dispensaries are <span class="highlight">growing, stalling, or dying.</span></h1>
+                    
+                    <p class="tagline">
+                        Bi-weekly market intel for <strong>cannabis brands and wholesalers</strong>. Know who to call before your competitors do.
+                    </p>
+                    
+                    <div class="preview-callout">
+                        <div class="preview-item license"><strong>3 New Licenses</strong> — Opening soon in Western Mass.</div>
+                        <div class="preview-item distress"><strong>Distress Signals</strong> — Top 10 operators struggling this month.</div>
+                        <div class="preview-item price"><strong>Pricing Trends</strong> — Flower prices dropping in Worcester county.</div>
+                    </div>
+                    
+                    <div class="cta-group">
+                        <a href="#signup" class="btn-primary">
+                            Get the briefing →
+                        </a>
+                        <a href="#intel-pack" class="btn-secondary">Looking for the full dataset?</a>
                     </div>
                 </div>
                 
-                <div class="service-visual">
-                    <div class="visual-header">
-                        <div class="visual-dot"></div>
-                        <div class="visual-label">How the Conversation Goes</div>
-                    </div>
+                <div class="hero-card" id="signup">
+                    <h3 class="card-title">Join The Brief</h3>
+                    <p class="card-subtitle">Bi-weekly vendor intel. Free updates.</p>
                     
-                    <div class="conversation-flow">
-                        <div class="convo-bubble you">
-                            <div class="convo-label">You</div>
-                            "Hey, we sell cannabis beverages. Need to find dispensaries that would actually stock us."
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Your name</label>
+                            <input type="text" id="name" name="name" placeholder="Alex" required>
                         </div>
-                        <div class="convo-bubble randy">
-                            <div class="convo-label">Roviq</div>
-                            "Got it. I'll pull every MA operator with weak beverage selection—fewer than 3 SKUs. I'll include buyer contacts, store health signals, and talking points. Give me 48 hours."
+                        
+                        <div class="form-group">
+                            <label for="email">Work email</label>
+                            <input type="email" id="email" name="email" placeholder="alex@brand.com" required>
                         </div>
-                        <div class="convo-bubble you">
-                            <div class="convo-label">You</div>
-                            "Perfect."
+                        
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Brand / Wholesaler">
                         </div>
-                        <div class="convo-bubble randy">
-                            <div class="convo-label">Roviq</div>
-                            "Done. 47 qualified leads in your inbox. Go close some deals."
-                        </div>
-                    </div>
+                        
+                        <button type="submit" class="btn-primary form-submit">
+                            Send me the brief
+                        </button>
+                        
+                        <p class="privacy-note">Data-driven intel. No fluff.</p>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works">
+    
+    <!-- The Problem -->
+    <section class="problem-section">
         <div class="container">
-            <div class="how-header">
-                <div class="section-label">How It Works</div>
-                <h2 class="section-title">Three Steps. That's It.</h2>
-                <p>No onboarding. No training. No figuring it out yourself.</p>
-            </div>
-            
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">📞</div>
-                    <h3>Quick Call</h3>
-                    <p>15 minutes. Tell us what you sell, who your ideal buyer is, and what matters most. That's all we need.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">🔍</div>
-                    <h3>We Analyze</h3>
-                    <p>We dig through 600+ operators. Menu gaps. Growth signals. Buyer contacts. We build your custom intel package.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">📥</div>
-                    <h3>You Receive</h3>
-                    <p>Within 48 hours: a clean CSV, context brief, and talk tracks. Ready to use. Start closing deals.</p>
-                </div>
+            <div class="problem-content">
+                <span class="problem-kicker">the blind spot</span>
+                <h2>There are 300+ dispensaries in Massachusetts. Which ones should you call?</h2>
+                <p>
+                    Most sales teams are pitching blind. You call the same list as everyone else. You don't know who just got licensed, who's running out of cash, or who desperately needs new product on their shelves.
+                </p>
+                <p>
+                    <strong>Your competitors have data. Do you?</strong>
+                </p>
             </div>
         </div>
     </section>
-
+    
     <!-- What You Get -->
-    <section class="deliverables">
+    <section class="inside-section">
         <div class="container">
-            <div class="deliverables-header">
-                <div class="section-label">What You Get</div>
-                <h2 class="section-title">Everything Delivered, Ready to Use</h2>
-                <p>No assembly required. Open the email, start selling.</p>
+            <div class="section-header">
+                <span class="section-kicker">inside every issue</span>
+                <h2>What You'll Get</h2>
+                <p>Actionable intelligence to drive your sales strategy.</p>
             </div>
             
-            <div class="deliverables-grid">
-                <div class="deliverable-card">
-                    <div class="deliverable-icon">📊</div>
-                    <div>
-                        <h4>Qualified Lead List</h4>
-                        <p>Your top prospects ranked by fit for YOUR product. Not generic—customized to your category and goals.</p>
-                        <div class="deliverable-badge">Clean CSV format</div>
-                    </div>
-                </div>
-                <div class="deliverable-card">
-                    <div class="deliverable-icon">👤</div>
-                    <div>
-                        <h4>Decision Maker Contacts</h4>
-                        <p>Actual buyer names and emails. Not info@ black holes. The people who sign purchase orders.</p>
-                        <div class="deliverable-badge">Verified contacts</div>
-                    </div>
-                </div>
-                <div class="deliverable-card">
-                    <div class="deliverable-icon">📈</div>
-                    <div>
-                        <h4>Store Health Signals</h4>
-                        <p>Review velocity, hiring activity, operational status. Know who's growing vs. who's struggling.</p>
-                        <div class="deliverable-badge">Weekly verified</div>
-                    </div>
-                </div>
-                <div class="deliverable-card">
-                    <div class="deliverable-icon">💬</div>
-                    <div>
-                        <h4>Talk Tracks & Context</h4>
-                        <p>Brief on each priority account. What they're missing, why they need you, how to open the conversation.</p>
-                        <div class="deliverable-badge">Sales-ready</div>
-                    </div>
-                </div>
-                <div class="deliverable-card">
-                    <div class="deliverable-icon">🎯</div>
-                    <div>
-                        <h4>Menu Gap Analysis</h4>
-                        <p>Dispensaries with holes in your category. They need what you sell—they just don't know it yet.</p>
-                        <div class="deliverable-badge">Our killer feature</div>
-                    </div>
-                </div>
-                <div class="deliverable-card">
-                    <div class="deliverable-icon">🔄</div>
-                    <div>
-                        <h4>30-Day Refresh</h4>
-                        <p>Markets move fast. You get one free data refresh within 30 days. Always current, always relevant.</p>
-                        <div class="deliverable-badge">Included</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Menu Gap Explanation -->
-    <section class="menu-gap-section">
-        <div class="container">
-            <div class="menu-gap-content">
-                <div class="menu-gap-text">
-                    <div class="section-label">Why It Works</div>
-                    <h2>The Menu Gap Is <span>Your Opportunity</span></h2>
-                    <p>Every dispensary has holes in their menu. Maybe they carry one beverage brand. Maybe zero topicals. Those gaps aren't problems—they're opportunities wearing name tags.</p>
-                    <p>We analyze every menu in the state. When you tell us your category, we find every store that's underserving it. Those stores need what you sell. They just haven't found you yet.</p>
+            <div class="inside-grid">
+                <div class="inside-card">
+                    <div class="inside-icon">🏗️</div>
+                    <h3>New License Alerts</h3>
+                    <p>Be the first to know who just got their final license. Pitch them before their shelves are full.</p>
                 </div>
                 
-                <div class="menu-gap-example">
-                    <div class="example-header">
-                        <div class="visual-dot"></div>
-                        <span>Real Example</span>
+                <div class="inside-card">
+                    <div class="inside-icon">📉</div>
+                    <h3>Distress Signals</h3>
+                    <p>Identify operators who are struggling. They need better margins and new products to survive. That's your entry point.</p>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-icon">👥</div>
+                    <h3>Buyer Contact Intel</h3>
+                    <p>Know who actually makes the decisions. Stop wasting time with gatekeepers.</p>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-icon">⚔️</div>
+                    <h3>Competitive Landscape</h3>
+                    <p>Track shifts in shelf space. See which brands are losing ground and where opportunities are opening up.</p>
+                </div>
+                
+                <div class="inside-card">
+                    <div class="inside-icon">💵</div>
+                    <h3>Pricing Trend Data</h3>
+                    <p>Real-time data on wholesale and retail pricing trends across the state.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sample Preview -->
+    <section class="sample-section">
+        <div class="container">
+            <div class="sample-grid">
+                <div class="sample-content">
+                    <span class="section-kicker">sneak peek</span>
+                    <h2>Real intel, not just news.</h2>
+                    <p>
+                        See what a typical vendor briefing looks like. We dig through the data so you don't have to.
+                    </p>
+                </div>
+                
+                <div class="sample-preview-card">
+                    <div class="sample-section-item">
+                        <div class="sample-section-title">📍 New Openings</div>
+                        <div class="sample-section-desc">3 new licenses in Western Mass approved this week. (Map & contacts included).</div>
                     </div>
-                    
-                    <div class="example-scenario">
-                        <h4>Beverage Brand Inquiry</h4>
-                        <p>"We make cannabis-infused seltzers. Who in MA needs more beverage options?"</p>
+                    <div class="sample-section-item">
+                        <div class="sample-section-title">⚠️ Distress Watch</div>
+                        <div class="sample-section-desc">Top 10 distressed operators this month based on payment delays and inventory stagnation.</div>
                     </div>
-                    
-                    <div class="example-scenario">
-                        <h4>Our Analysis</h4>
-                        <p>Filtered all 600+ operators for stores carrying fewer than 3 beverage SKUs. Cross-referenced with growth signals and buyer contacts.</p>
-                    </div>
-                    
-                    <div class="example-result">
-                        <div class="result-text">Qualified leads delivered</div>
-                        <div class="result-number">47</div>
+                    <div class="sample-section-item">
+                        <div class="sample-section-title">📊 Market Shift</div>
+                        <div class="sample-section-desc">Edible pricing in Boston Metro dropped 5% last month. Here's why.</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Who This Helps -->
+    
+    <!-- Who This Is For -->
     <section class="audience-section">
         <div class="container">
-            <div class="audience-header">
-                <div class="section-label">Who This Helps</div>
-                <h2 class="section-title">Built for People Who Sell to Dispensaries</h2>
-                <p>If you're trying to get products on dispensary shelves in Massachusetts, this is for you.</p>
+            <div class="section-header" style="text-align: center; margin: 0 auto; max-width: 100%;">
+                <h2>Who This Is For</h2>
             </div>
             
-            <div class="audience-cards">
-                <div class="audience-card">
-                    <div class="audience-icon">🍃</div>
-                    <h3>Cannabis Brands</h3>
-                    <p>Launching a new product? Expanding distribution? We find the stores that actually need your category and aren't already saturated.</p>
+            <div class="audience-grid">
+                <div class="audience-item">
+                    <span class="audience-icon">🏷️</span>
+                    <h3 class="audience-title">Brands</h3>
+                    <p>Find new shelf space.</p>
                 </div>
-                <div class="audience-card">
-                    <div class="audience-icon">📦</div>
-                    <h3>Distributors</h3>
-                    <p>Represent multiple brands? We help you prioritize which stores to hit first—based on what they're missing, not what you're guessing.</p>
+                <div class="audience-item">
+                    <span class="audience-icon">🌱</span>
+                    <h3 class="audience-title">Cultivators</h3>
+                    <p>Locate retail partners.</p>
                 </div>
-                <div class="audience-card">
-                    <div class="audience-icon">🤝</div>
-                    <h3>Sales Brokers</h3>
-                    <p>Time is money. Stop wasting it on cold calls to stores that aren't buying. Get warm leads that actually convert.</p>
+                <div class="audience-item">
+                    <span class="audience-icon">🏭</span>
+                    <h3 class="audience-title">Manufacturers</h3>
+                    <p>Seek distribution channels.</p>
+                </div>
+                <div class="audience-item">
+                    <span class="audience-icon">🔧</span>
+                    <h3 class="audience-title">Service Providers</h3>
+                    <p>HVAC, security, compliance.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Pricing -->
-    <section class="pricing-section">
+    
+    <!-- Intel Pack CTA -->
+    <section class="intel-cta-section" id="intel-pack">
         <div class="container">
-            <div class="pricing-wrapper">
-                <div class="pricing-header">
-                    <div class="section-label">Investment</div>
-                    <h2>One Price. Everything Included.</h2>
-                    <p>No subscriptions. No hidden fees. No upsells.</p>
-                </div>
-                
-                <div class="pricing-card">
-                    <div class="pricing-badge">COMPLETE SERVICE</div>
-                    <div class="pricing-label">One-Time Investment</div>
-                    <div class="pricing-amount">$500</div>
-                    <div class="pricing-desc">Full intel package, customized to your product category</div>
-                    
-                    <div class="pricing-includes">
-                        <h4>Everything Included:</h4>
-                        <ul class="includes-list">
-                            <li>Custom lead list</li>
-                            <li>Menu gap analysis</li>
-                            <li>Decision maker contacts</li>
-                            <li>Store health signals</li>
-                            <li>Talk tracks & context</li>
-                            <li>30-day data refresh</li>
-                            <li>Clean CSV delivery</li>
-                            <li>Direct access to our team</li>
-                        </ul>
-                    </div>
-                    
-                    <a href="mailto:randy@roviqai.xyz?subject=Intel%20Service%20-%20Ready%20to%20Start" class="pricing-cta">Book Your Call →</a>
-                    <div class="pricing-subtext">One deal pays for everything. Close two, and it's a no-brainer.</div>
-                </div>
-                
-                <div class="scarcity-notice">
-                    <p>⚠️ Limited to 3 clients per quarter to maintain data exclusivity.</p>
-                </div>
-            </div>
+            <h2>Want the full data?</h2>
+            <p>Get the <strong>Intel Pack</strong>. Access to 150+ operators with direct contact info, distress scores, and menu gap analysis.</p>
+            
+            <a href="#" class="intel-btn">Get the Intel Pack</a>
+            <span class="intel-price">$500 / one-time purchase</span>
         </div>
     </section>
-
-    <!-- Final CTA -->
-    <section class="final-cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Stop <span>Guessing?</span></h2>
-                <p>One quick call. Tell us what you sell. Get a qualified buyer list delivered to your inbox. It's that simple.</p>
-                
-                <div class="cta-buttons">
-                    <a href="mailto:randy@roviqai.xyz?subject=Let's%20Talk%20Intel" class="cta-primary">
-                        Email Us →
-                    </a>
-                    <a href="mailto:randy@roviqai.xyz?subject=Quick%20Question" class="cta-secondary">
-                        Ask a Question
-                    </a>
-                </div>
-                
-                <p class="cta-subtext"><a href="mailto:randy@roviqai.xyz">randy@roviqai.xyz</a> • Response within 24 hours</p>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-text">
-                © 2025 Roviq AI. Massachusetts Cannabis Market Intelligence.
-            </div>
-            <div class="footer-links">
-                <a href="mailto:randy@roviqai.xyz">randy@roviqai.xyz</a>
+            <div class="footer-inner">
+                <p class="footer-copy">© 2026 Roviq. Data-driven cannabis market intelligence.</p>
+                <p class="footer-copy">The MA Market Intel Brief</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Smooth reveal animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.pain-card, .step-card, .deliverable-card, .audience-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
